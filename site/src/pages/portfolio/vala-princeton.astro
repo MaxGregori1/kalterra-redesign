@@ -1,0 +1,140 @@
+---
+import Layout from '../../layouts/Layout.astro'
+const base = import.meta.env.BASE_URL
+
+const project = {
+  name: 'VALA Princeton',
+  type: 'Multi Family',
+  location: 'Princeton, TX',
+  status: 'Pre-Development',
+  units: 378,
+  acreage: null,
+  sqft: null,
+  description: 'VALA Princeton is located on N Beauchamp Blvd in the booming Princeton market, just 5 miles east of McKinney, TX. Kalterra secured a new zoning designation to allow for high-density multifamily development.',
+  amenities: ['Courtyard', 'Kitchen', 'Pet Friendly', 'Pool'],
+  website: null,
+  heroImage: `${base}assets/images/portfolio/vala-princeton.webp`,
+  gallery: [
+    { src: `${base}assets/images/portfolio/vala-princeton/01.webp`, alt: 'Aerial View' },
+    { src: `${base}assets/images/portfolio/vala-princeton/02.jpg`, alt: 'Club Interior' },
+    { src: `${base}assets/images/portfolio/vala-princeton/03.jpg`, alt: 'Club Interior View 2' },
+    { src: `${base}assets/images/portfolio/vala-princeton/04.jpg`, alt: 'Street View' },
+    { src: `${base}assets/images/portfolio/vala-princeton/05.jpg`, alt: 'Unit Kitchen' },
+    { src: `${base}assets/images/portfolio/vala-princeton/06.jpg`, alt: 'Unit Bathroom' },
+  ],
+}
+---
+
+<Layout title={project.name} description={`${project.name} — ${project.type} in ${project.location}`}>
+  <!-- HERO -->
+  <section class="pt-32 pb-6 lg:pt-40 lg:pb-8 bg-black">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+      <a href={`${base}portfolio/`} class="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-gold transition-colors mb-8">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        Back to Portfolio
+      </a>
+      <p class="text-sm uppercase tracking-widest text-gold mb-4">{project.type} &middot; {project.location}</p>
+      <h1 class="text-white">{project.name}</h1>
+    </div>
+  </section>
+
+  <!-- HERO IMAGE -->
+  <section class="bg-black pb-12 lg:pb-16">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+      <div class="aspect-[21/9] overflow-hidden">
+        <img src={project.heroImage} alt={project.name} class="w-full h-full object-cover" />
+      </div>
+    </div>
+  </section>
+
+  <!-- DETAILS -->
+  <section class="bg-black pb-16 lg:pb-24">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
+        <!-- Specs sidebar -->
+        <div class="lg:col-span-1">
+          <h3 class="text-white text-lg font-semibold mb-6 pb-4 border-b border-gray-800">Project Details</h3>
+          <dl class="space-y-4">
+            <div>
+              <dt class="text-gray-500 text-sm uppercase tracking-wider">Type</dt>
+              <dd class="text-white mt-1">{project.type}</dd>
+            </div>
+            <div>
+              <dt class="text-gray-500 text-sm uppercase tracking-wider">Location</dt>
+              <dd class="text-white mt-1">{project.location}</dd>
+            </div>
+            {project.units && (
+              <div>
+                <dt class="text-gray-500 text-sm uppercase tracking-wider">Units</dt>
+                <dd class="text-white mt-1">{project.units}</dd>
+              </div>
+            )}
+            {project.sqft && (
+              <div>
+                <dt class="text-gray-500 text-sm uppercase tracking-wider">Square Footage</dt>
+                <dd class="text-white mt-1">{project.sqft}</dd>
+              </div>
+            )}
+            {project.acreage && (
+              <div>
+                <dt class="text-gray-500 text-sm uppercase tracking-wider">Acreage</dt>
+                <dd class="text-white mt-1">{project.acreage}</dd>
+              </div>
+            )}
+            <div>
+              <dt class="text-gray-500 text-sm uppercase tracking-wider">Status</dt>
+              <dd class="text-gold mt-1">{project.status}</dd>
+            </div>
+            {project.website && (
+              <div>
+                <dt class="text-gray-500 text-sm uppercase tracking-wider">Website</dt>
+                <dd class="mt-1"><a href={`https://${project.website}`} target="_blank" rel="noopener" class="text-gold hover:text-gold-light transition-colors">{project.website}</a></dd>
+              </div>
+            )}
+          </dl>
+        </div>
+
+        <!-- Description -->
+        <div class="lg:col-span-2">
+          <p class="text-gray-300 text-lg leading-relaxed">{project.description}</p>
+          {project.amenities.length > 0 && (
+            <div class="mt-10">
+              <h4 class="text-white text-lg font-semibold mb-4">Amenities</h4>
+              <div class="flex flex-wrap gap-3">
+                {project.amenities.map((amenity) => (
+                  <span class="px-4 py-2 border border-gray-800 text-gray-300 text-sm">{amenity}</span>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  {project.gallery.length > 0 && (
+    <section class="bg-gray-950 py-16 lg:py-24">
+      <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+        <h2 class="text-white mb-10">Gallery</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {project.gallery.map((img) => (
+            <div class="aspect-[4/3] overflow-hidden bg-gray-900">
+              <img src={img.src} alt={img.alt} class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- CTA -->
+  <section class="bg-black py-16 lg:py-24 border-t border-gray-800">
+    <div class="max-w-3xl mx-auto px-6 lg:px-12 text-center">
+      <h2 class="text-white mb-6">Interested in this project?</h2>
+      <a href={`${base}contact/`} class="inline-block px-10 py-4 bg-gold text-black font-semibold text-sm uppercase tracking-widest hover:bg-gold-light transition-colors">
+        Contact Us
+      </a>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+@theme {
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-gold: #c9a84c;
+  --color-gold-light: #d4b85e;
+  --color-gray-50: #fafafa;
+  --color-gray-100: #f5f5f5;
+  --color-gray-200: #e5e5e5;
+  --color-gray-300: #d4d4d4;
+  --color-gray-400: #a3a3a3;
+  --color-gray-500: #737373;
+  --color-gray-600: #525252;
+  --color-gray-700: #404040;
+  --color-gray-800: #262626;
+  --color-gray-900: #171717;
+  --color-gray-950: #0a0a0a;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    font-size: 18px;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    @apply bg-black text-white font-sans leading-relaxed;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-semibold tracking-tight leading-tight;
+  }
+  h1 { @apply text-5xl md:text-6xl lg:text-7xl; }
+  h2 { @apply text-3xl md:text-4xl lg:text-5xl; }
+  h3 { @apply text-2xl md:text-3xl; }
+  h4 { @apply text-xl md:text-2xl; }
+  h5 { @apply text-lg; }
+  a {
+    @apply transition-colors duration-300;
+  }
+}
+
+/* Smooth fade-in animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.8s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Staggered delays */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+
+/* Hero video overlay */
+.hero-overlay {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.7) 100%);
+}
+
+/* Project card hover */
+.project-card .project-overlay {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+.project-card img {
+  transition: transform 0.6s ease;
+}
+.project-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Team member card hover */
+.team-card .team-overlay {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.team-card:hover .team-overlay {
+  opacity: 1;
+}
+
+/* Nav mobile menu */
+.nav-open .mobile-menu {
+  transform: translateX(0);
+}
+.mobile-menu {
+  transform: translateX(100%);
+  transition: transform 0.4s ease;
+}
+
+/* Counter animation placeholder */
+[data-counter] {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Focus-visible accessibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(201, 168, 76, 0.3);
+  color: #fff;
+}
+
+/* Mobile: always show project card overlay since no hover */
+@media (hover: none) {
+  .project-card .project-overlay {
+    opacity: 1;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 60%);
+  }
+}
+
+/* Button consistent hover lift */
+.btn-primary {
+  @apply px-8 py-4 bg-gold text-black font-semibold text-sm uppercase tracking-widest hover:bg-gold-light transition-all duration-300;
+}
+.btn-outline {
+  @apply px-8 py-4 border border-white/30 text-white font-semibold text-sm uppercase tracking-widest hover:bg-white/10 transition-all duration-300;
+}
+
+/* Image loading placeholder */
+img {
+  background-color: var(--color-gray-900);
+}

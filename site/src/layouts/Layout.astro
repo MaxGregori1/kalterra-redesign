@@ -1,0 +1,85 @@
+---
+import '../styles/global.css'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+
+interface Props {
+  title: string
+  description?: string
+  headerAlt?: boolean
+}
+
+const { title, description = 'Kalterra Capital Partners — Texas Multifamily Acquisitions. Local Execution. Durable Returns.', headerAlt = false } = Astro.props
+const base = import.meta.env.BASE_URL
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title} | Kalterra</title>
+  <meta name="description" content={description} />
+  <link rel="icon" type="image/webp" href={`${base}assets/images/logos/favicon-32.webp`} />
+  <link rel="apple-touch-icon" href={`${base}assets/images/logos/favicon-180.webp`} />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <Header alt={headerAlt} />
+  <main>
+    <slot />
+  </main>
+  <Footer />
+
+  <script>
+    // Header scroll behavior
+    const header = document.querySelector('[data-header]')
+    if (header) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          header.classList.add('bg-black/95', 'backdrop-blur-md', 'shadow-lg')
+          header.classList.remove('bg-transparent')
+        } else {
+          header.classList.remove('bg-black/95', 'backdrop-blur-md', 'shadow-lg')
+          header.classList.add('bg-transparent')
+        }
+      })
+    }
+
+    // Mobile menu toggle
+    const menuBtn = document.querySelector('[data-menu-toggle]')
+    const mobileMenu = document.querySelector('[data-mobile-menu]')
+    const body = document.body
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        body.classList.toggle('nav-open')
+        menuBtn.setAttribute('aria-expanded',
+          body.classList.contains('nav-open').toString()
+        )
+      })
+      // Close on link click
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          body.classList.remove('nav-open')
+        })
+      })
+    }
+
+    // Simple counter animation for metrics
+    const counters = document.querySelectorAll('[data-counter]')
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target as HTMLElement
+          const end = el.dataset.counter || '0'
+          el.textContent = end
+          observer.unobserve(el)
+        }
+      })
+    }, { threshold: 0.5 })
+    counters.forEach(c => observer.observe(c))
+  </script>
+</body>
+</html>

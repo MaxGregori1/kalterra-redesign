@@ -1,0 +1,238 @@
+---
+import Layout from '../layouts/Layout.astro'
+const base = import.meta.env.BASE_URL
+---
+
+<Layout title="About" headerAlt={true}>
+  <!-- ============================================
+       HERO
+       ============================================ -->
+  <section class="pt-32 pb-20 lg:pt-40 lg:pb-28 bg-black">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+        <div>
+          <p class="text-sm uppercase tracking-widest text-gold mb-4">About Kalterra</p>
+          <h1 class="text-white mb-8">Exceptional Real Estate</h1>
+        </div>
+        <div class="lg:pt-4">
+          <div class="space-y-6 text-gray-300 text-lg leading-relaxed">
+            <p>
+              Kalterra is derived from the Greek word <em>kalitera</em> (the best) and the Latin word <em>terra</em> (land). True to our name, we acquire great real estate and transform it into exceptional communities. Through a data-driven and disciplined investment strategy, we identify the most attractive Texas submarkets and pursue opportunities across the full lifecycle of multifamily real estate &mdash; from acquisition of stabilized assets to select development opportunities.
+            </p>
+            <p>
+              Projects come alive through a meticulous operational philosophy. The needs of our residents and communities inform every decision, whether enhancing the performance of an existing asset or executing a new investment. Alignment with partners who share our vision and values is central to our success.
+            </p>
+            <p>
+              Multifamily ownership requires operational discipline, local market knowledge, and financial expertise. At Kalterra, we bring these together through thoughtful acquisitions and hands-on asset management to create long-term value.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About imagery -->
+  <section class="bg-black">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src={`${base}assets/images/about/kalterra-image-1.jpg`} alt="Kalterra property" class="w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src={`${base}assets/images/about/great-room.webp`} alt="Interior living space" class="w-full h-full object-cover" loading="lazy" />
+        </div>
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src={`${base}assets/images/about/property-twilight.webp`} alt="Property at twilight" class="w-full h-full object-cover" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       CORE VALUES
+       ============================================ -->
+  <section class="bg-gray-950 py-20 lg:py-28">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+      <div class="text-center mb-16">
+        <p class="text-sm uppercase tracking-widest text-gold mb-4">Our Core Values</p>
+        <h2 class="text-white">The Foundation of Everything We Do</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+        <div class="text-center p-6">
+          <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-gold/10 flex items-center justify-center">
+            <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+          </div>
+          <h4 class="text-gold font-semibold text-lg mb-3">Cultivate Community</h4>
+        </div>
+        <div class="text-center p-6">
+          <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-gold/10 flex items-center justify-center">
+            <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+          </div>
+          <h4 class="text-gold font-semibold text-lg mb-3">Unwavering Honesty</h4>
+        </div>
+        <div class="text-center p-6">
+          <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-gold/10 flex items-center justify-center">
+            <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+          </div>
+          <h4 class="text-gold font-semibold text-lg mb-3">Uncompromising Grit</h4>
+        </div>
+        <div class="text-center p-6">
+          <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-gold/10 flex items-center justify-center">
+            <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" /></svg>
+          </div>
+          <h4 class="text-gold font-semibold text-lg mb-3">Individually Outstanding</h4>
+        </div>
+        <div class="text-center p-6">
+          <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-gold/10 flex items-center justify-center">
+            <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+          </div>
+          <h4 class="text-gold font-semibold text-lg mb-3">Unbeatable as a Team</h4>
+        </div>
+      </div>
+      <p class="text-center text-2xl text-white font-light mt-16">
+        Our work is our <span class="text-gold font-semibold">craft</span>.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================
+       CAPABILITIES
+       ============================================ -->
+  <section class="bg-black py-20 lg:py-28">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+      <div class="text-center mb-16">
+        <p class="text-sm uppercase tracking-widest text-gold mb-4">Our Capabilities</p>
+        <h2 class="text-white">Full-Cycle Multifamily Expertise</h2>
+      </div>
+
+      <!-- Capital Markets -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-20 lg:mb-28">
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src={`${base}assets/images/capabilities/capital-markets.webp`} alt="Capital Markets" class="w-full h-full object-cover" />
+        </div>
+        <div>
+          <h3 class="text-gold mb-6">Capital Markets</h3>
+          <p class="text-gray-300 text-lg leading-relaxed">
+            Kalterra has an extensive background in capital formation and a strong ability to access
+            the debt and equity providers to fund our investments. Our underwriting, risk assessment
+            and market analysis expertise allows us to identify the most advantageous financing
+            options available. Through established relationships with a broad spectrum of capital
+            providers, we can minimize risk and maximize returns for our stakeholders.
+          </p>
+        </div>
+      </div>
+
+      <!-- Acquisitions (NEW) -->
+      <!-- PLACEHOLDER — client to provide final copy -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-20 lg:mb-28">
+        <div class="order-2 lg:order-1">
+          <h3 class="text-gold mb-6">Acquisitions</h3>
+          <p class="text-gray-300 text-lg leading-relaxed mb-6">
+            Kalterra's acquisitions platform is purpose-built for the Texas multifamily market.
+            Through rigorous, data-driven sourcing and deep local relationships, we identify
+            compelling opportunities across stabilized, value-add, and select development plays
+            in the state's highest-growth corridors.
+          </p>
+          <ul class="space-y-4 text-gray-300 text-lg">
+            <li class="flex items-start gap-3">
+              <span class="text-gold mt-1.5 flex-shrink-0">&bull;</span>
+              <span><strong class="text-white">Texas-focused sourcing</strong> &mdash; Deep market knowledge across DFW, Austin, San Antonio, and emerging Texas submarkets</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-gold mt-1.5 flex-shrink-0">&bull;</span>
+              <span><strong class="text-white">Direct seller relationships</strong> &mdash; Off-market access through established broker and principal networks</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-gold mt-1.5 flex-shrink-0">&bull;</span>
+              <span><strong class="text-white">Institutional underwriting</strong> &mdash; Conservative assumptions with granular rent comp, expense, and capital expenditure analysis</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-gold mt-1.5 flex-shrink-0">&bull;</span>
+              <span><strong class="text-white">Value-add execution</strong> &mdash; Proven ability to identify and implement operational and physical improvements that drive returns</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-gold mt-1.5 flex-shrink-0">&bull;</span>
+              <span><strong class="text-white">Local operational oversight</strong> &mdash; Hands-on asset management ensures business plan execution from day one</span>
+            </li>
+          </ul>
+        </div>
+        <div class="order-1 lg:order-2 aspect-[4/3] overflow-hidden">
+          <img src={`${base}assets/images/about/kalterra-image-2.jpg`} alt="Acquisitions" class="w-full h-full object-cover" />
+        </div>
+      </div>
+
+      <!-- Development -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-20 lg:mb-28">
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src={`${base}assets/images/capabilities/development.webp`} alt="Development" class="w-full h-full object-cover" />
+        </div>
+        <div>
+          <h3 class="text-gold mb-6">Development</h3>
+          <p class="text-gray-300 text-lg leading-relaxed">
+            Kalterra's expertise in site identification, market research, and analytic-driven design
+            enables us to deliver multifamily properties that are tailor fit to their communities,
+            thereby maximizing value for our investors. Our internal teams are dedicated to the entire
+            development process including site selection, entitlement, design, and construction oversight.
+            Our best-in-class design professionals help us continually stay on the forefront of
+            multifamily design, incorporating the latest trends in luxury living.
+          </p>
+        </div>
+      </div>
+
+      <!-- Asset Management (NEW copy) -->
+      <!-- PLACEHOLDER — client to provide final copy -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-20 lg:mb-28">
+        <div class="order-2 lg:order-1">
+          <h3 class="text-gold mb-6">Asset Management</h3>
+          <p class="text-gray-300 text-lg leading-relaxed mb-6">
+            Kalterra's asset management function operates at the ownership and portfolio strategy level,
+            distinct from day-to-day property operations. Our asset management team is responsible for
+            driving investment performance, ensuring alignment between the business plan and on-the-ground
+            execution, and maximizing value creation across the portfolio.
+          </p>
+          <p class="text-gray-300 text-lg leading-relaxed">
+            Core responsibilities include portfolio performance monitoring, investor reporting and
+            communications, capital planning and renovation oversight, market analysis for hold/sell
+            decisions, and disposition strategy. We take a hands-on approach to ensure every asset
+            in our portfolio is positioned for optimal risk-adjusted returns, providing our investors
+            with transparent, data-driven updates throughout the investment lifecycle.
+          </p>
+        </div>
+        <div class="order-1 lg:order-2 aspect-[4/3] overflow-hidden">
+          <img src={`${base}assets/images/capabilities/asset-management.webp`} alt="Asset Management" class="w-full h-full object-cover" />
+        </div>
+      </div>
+
+      <!-- Property Management -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src={`${base}assets/images/about/gym.jpg`} alt="Property Management amenities" class="w-full h-full object-cover" />
+        </div>
+        <div>
+          <h3 class="text-gold mb-6">Property Management</h3>
+          <p class="text-gray-300 text-lg leading-relaxed">
+            For our multifamily investments, Kalterra undergoes an extensive vetting process to
+            ensure we partner with the best possible local property management groups for each of
+            our projects. Our asset management teams take a hands-on approach with our property
+            management partners to ensure we are maximizing value. We work with our property
+            management partners to ensure our branding, collateral, website, and a custom
+            marketing plan is in place months before the lease-up begins.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-gray-950 py-20 lg:py-28 border-t border-gray-800">
+    <div class="max-w-3xl mx-auto px-6 lg:px-12 text-center">
+      <h2 class="text-white mb-6">Want to know more?</h2>
+      <a
+        href={`${base}contact/`}
+        class="inline-block px-10 py-4 bg-gold text-black font-semibold text-sm uppercase tracking-widest hover:bg-gold-light transition-colors"
+      >
+        Contact Us
+      </a>
+    </div>
+  </section>
+</Layout>
