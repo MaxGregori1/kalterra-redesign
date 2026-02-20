@@ -78,6 +78,7 @@ import Layout from '../layouts/Layout.astro'
                   type="text"
                   id="firstName"
                   name="firstName"
+                  autocomplete="given-name"
                   required
                   class="w-full bg-transparent border border-gray-700 px-4 py-3 text-white text-lg focus:border-gold focus:outline-none transition-colors"
                 />
@@ -90,6 +91,7 @@ import Layout from '../layouts/Layout.astro'
                   type="text"
                   id="lastName"
                   name="lastName"
+                  autocomplete="family-name"
                   required
                   class="w-full bg-transparent border border-gray-700 px-4 py-3 text-white text-lg focus:border-gold focus:outline-none transition-colors"
                 />
@@ -103,6 +105,8 @@ import Layout from '../layouts/Layout.astro'
                 type="email"
                 id="email"
                 name="email"
+                autocomplete="email"
+                spellcheck="false"
                 required
                 class="w-full bg-transparent border border-gray-700 px-4 py-3 text-white text-lg focus:border-gold focus:outline-none transition-colors"
               />
@@ -115,6 +119,7 @@ import Layout from '../layouts/Layout.astro'
                 type="tel"
                 id="phone"
                 name="phone"
+                autocomplete="tel"
                 class="w-full bg-transparent border border-gray-700 px-4 py-3 text-white text-lg focus:border-gold focus:outline-none transition-colors"
               />
             </div>

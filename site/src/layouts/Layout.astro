@@ -14,10 +14,11 @@ const base = import.meta.env.BASE_URL
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="color-scheme: dark;">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#000000" />
   <title>{title} | Kalterra</title>
   <meta name="description" content={description} />
   <link rel="icon" type="image/webp" href={`${base}assets/images/logos/favicon-32.webp`} />
@@ -27,8 +28,9 @@ const base = import.meta.env.BASE_URL
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 </head>
 <body>
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-gold focus:text-black focus:font-semibold">Skip to content</a>
   <Header alt={headerAlt} />
-  <main>
+  <main id="main-content">
     <slot />
   </main>
   <Footer />

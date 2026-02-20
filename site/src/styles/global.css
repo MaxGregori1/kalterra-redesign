@@ -33,6 +33,7 @@
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-display font-semibold tracking-tight leading-tight;
+    text-wrap: balance;
   }
   h1 { @apply text-5xl md:text-6xl lg:text-7xl; }
   h2 { @apply text-3xl md:text-4xl lg:text-5xl; }
@@ -136,13 +137,49 @@ button:focus-visible {
 
 /* Button consistent hover lift */
 .btn-primary {
-  @apply px-8 py-4 bg-gold text-black font-semibold text-sm uppercase tracking-widest hover:bg-gold-light transition-all duration-300;
+  @apply px-8 py-4 bg-gold text-black font-semibold text-sm uppercase tracking-widest hover:bg-gold-light transition-colors duration-300;
 }
 .btn-outline {
-  @apply px-8 py-4 border border-white/30 text-white font-semibold text-sm uppercase tracking-widest hover:bg-white/10 transition-all duration-300;
+  @apply px-8 py-4 border border-white/30 text-white font-semibold text-sm uppercase tracking-widest hover:bg-white/10 transition-colors duration-300;
 }
 
 /* Image loading placeholder */
 img {
   background-color: var(--color-gray-900);
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Touch optimization */
+a, button, [role="button"] {
+  touch-action: manipulation;
+}
+
+/* Placeholder sections — visually flag for client review */
+.placeholder-flag {
+  position: relative;
+  border: 2px dashed rgba(201, 168, 76, 0.4);
+  border-radius: 4px;
+}
+.placeholder-flag::before {
+  content: "AWAITING CLIENT INPUT";
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  background: var(--color-gold);
+  color: #000;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  z-index: 10;
 }
