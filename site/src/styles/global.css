@@ -156,8 +156,8 @@ select {
   @apply px-8 py-4 border border-gray-300 text-gray-900 font-semibold text-sm uppercase tracking-widest hover:bg-gray-100 transition-colors duration-300;
 }
 
-/* Image loading placeholder */
-img {
+/* Image loading placeholder (exclude logos and icons with transparent bg) */
+img:not([data-logo]) {
   background-color: var(--color-gray-100);
 }
 
