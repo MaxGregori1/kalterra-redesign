@@ -76,35 +76,35 @@ const isActive = (href: string) => currentPath === href || currentPath.startsWit
       <span class:list={['block w-5 h-0.5 transition-transform ml-auto', alt ? 'bg-gray-800' : 'bg-white']} aria-hidden="true"></span>
     </button>
   </div>
-
-  <!-- Mobile Menu -->
-  <div
-    id="mobile-menu"
-    data-mobile-menu
-    role="dialog"
-    aria-label="Navigation menu"
-    class="mobile-menu fixed inset-0 bg-white z-40 flex flex-col items-center justify-center lg:hidden"
-  >
-    <nav class="flex flex-col items-center gap-8">
-      {navLinks.map(link => (
-        <a
-          href={link.href}
-          class:list={[
-            'text-2xl font-medium uppercase tracking-widest hover:text-gold',
-            isActive(link.href) ? 'text-gold' : 'text-gray-900'
-          ]}
-        >
-          {link.label}
-        </a>
-      ))}
-      <a
-        href="https://investors.appfolioim.com/kalterracapital/investor/login"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="text-2xl font-medium uppercase tracking-widest text-gold hover:text-gold-light"
-      >
-        Investor Login
-      </a>
-    </nav>
-  </div>
 </header>
+
+<!-- Mobile Menu — placed outside <header> to avoid backdrop-filter creating a containing block that breaks position:fixed -->
+<div
+  id="mobile-menu"
+  data-mobile-menu
+  role="dialog"
+  aria-label="Navigation menu"
+  class="mobile-menu fixed inset-0 bg-white z-[100] flex flex-col items-center justify-center lg:hidden"
+>
+  <nav class="flex flex-col items-center gap-8">
+    {navLinks.map(link => (
+      <a
+        href={link.href}
+        class:list={[
+          'text-2xl font-medium uppercase tracking-widest hover:text-gold',
+          isActive(link.href) ? 'text-gold' : 'text-gray-900'
+        ]}
+      >
+        {link.label}
+      </a>
+    ))}
+    <a
+      href="https://investors.appfolioim.com/kalterracapital/investor/login"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="text-2xl font-medium uppercase tracking-widest text-gold hover:text-gold-light"
+    >
+      Investor Login
+    </a>
+  </nav>
+</div>

@@ -109,6 +109,17 @@
   transition: transform 0.4s ease;
 }
 
+/* When mobile nav is open: lock scroll, boost header above menu overlay */
+.nav-open {
+  overflow: hidden;
+}
+.nav-open [data-header] {
+  z-index: 110 !important;
+  background: white !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
 /* Counter animation placeholder */
 [data-counter] {
   font-variant-numeric: tabular-nums;
