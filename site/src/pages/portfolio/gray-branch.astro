@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro'
+import Gallery from '../../components/Gallery.astro'
 const base = import.meta.env.BASE_URL
 
 const project = {
@@ -103,20 +104,7 @@ const project = {
   </section>
 
   <!-- GALLERY -->
-  {project.gallery.length > 0 && (
-    <section class="bg-gray-50 py-16 lg:py-24">
-      <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
-        <h2 class="text-gray-900 mb-10">Gallery</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {project.gallery.map((img) => (
-            <div class="aspect-[4/3] overflow-hidden bg-gray-100">
-              <img src={img.src} alt={img.alt} class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" />
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )}
+  {project.gallery.length > 0 && <Gallery images={project.gallery} />}
 
   <!-- CTA -->
   <section class="bg-gray-50 py-16 lg:py-24 border-t border-gray-200">
