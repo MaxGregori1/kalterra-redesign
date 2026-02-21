@@ -14,11 +14,11 @@ const base = import.meta.env.BASE_URL
 ---
 
 <!DOCTYPE html>
-<html lang="en" style="color-scheme: dark;">
+<html lang="en" style="color-scheme: light;">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#000000" />
+  <meta name="theme-color" content="#ffffff" />
   <title>{title} | Kalterra</title>
   <meta name="description" content={description} />
   <link rel="icon" type="image/webp" href={`${base}assets/images/logos/favicon-32.webp`} />
@@ -37,17 +37,49 @@ const base = import.meta.env.BASE_URL
 
   <script>
     // Header scroll behavior
-    const header = document.querySelector('[data-header]')
+    const header = document.querySelector('[data-header]') as HTMLElement | null
     if (header) {
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-          header.classList.add('bg-black/95', 'backdrop-blur-md', 'shadow-lg')
-          header.classList.remove('bg-transparent')
-        } else {
-          header.classList.remove('bg-black/95', 'backdrop-blur-md', 'shadow-lg')
-          header.classList.add('bg-transparent')
-        }
-      })
+      const isAlt = header.dataset.headerAlt === 'true'
+      const logo = header.querySelector('[data-logo]') as HTMLImageElement | null
+      const logoBlack = logo?.dataset.logoBlack || ''
+      const logoWhite = logo?.dataset.logoWhite || ''
+      const navLinks = header.querySelectorAll('nav a:not([target="_blank"])')
+      const hamburgerBars = header.querySelectorAll('[data-menu-toggle] span')
+
+      if (!isAlt) {
+        // Home page: transition from transparent (white text) to solid white (dark text) on scroll
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 50) {
+            header.classList.add('bg-white/95', 'backdrop-blur-md', 'shadow-sm')
+            header.classList.remove('bg-transparent')
+            if (logo) logo.src = logoBlack
+            navLinks.forEach(a => {
+              if (!a.classList.contains('text-gold')) {
+                a.classList.remove('text-white')
+                a.classList.add('text-gray-800')
+              }
+            })
+            hamburgerBars.forEach(s => {
+              s.classList.remove('bg-white')
+              s.classList.add('bg-gray-800')
+            })
+          } else {
+            header.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-sm')
+            header.classList.add('bg-transparent')
+            if (logo) logo.src = logoWhite
+            navLinks.forEach(a => {
+              if (!a.classList.contains('text-gold')) {
+                a.classList.remove('text-gray-800')
+                a.classList.add('text-white')
+              }
+            })
+            hamburgerBars.forEach(s => {
+              s.classList.remove('bg-gray-800')
+              s.classList.add('bg-white')
+            })
+          }
+        })
+      }
     }
 
     // Mobile menu toggle
@@ -55,16 +87,40 @@ const base = import.meta.env.BASE_URL
     const mobileMenu = document.querySelector('[data-mobile-menu]')
     const body = document.body
     if (menuBtn && mobileMenu) {
+      const hamburgerBarsAll = menuBtn.querySelectorAll('span')
       menuBtn.addEventListener('click', () => {
         body.classList.toggle('nav-open')
-        menuBtn.setAttribute('aria-expanded',
-          body.classList.contains('nav-open').toString()
-        )
+        const isOpen = body.classList.contains('nav-open')
+        menuBtn.setAttribute('aria-expanded', isOpen.toString())
+        // Force dark hamburger bars when menu is open (white bg)
+        hamburgerBarsAll.forEach(s => {
+          if (isOpen) {
+            s.classList.remove('bg-white')
+            s.classList.add('bg-gray-800')
+          } else {
+            // Restore based on scroll position and header mode
+            const header = document.querySelector('[data-header]') as HTMLElement | null
+            const isAlt = header?.dataset.headerAlt === 'true'
+            if (!isAlt && window.scrollY <= 50) {
+              s.classList.remove('bg-gray-800')
+              s.classList.add('bg-white')
+            }
+          }
+        })
       })
       // Close on link click
       mobileMenu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
           body.classList.remove('nav-open')
+          // Restore hamburger bar colors
+          hamburgerBarsAll.forEach(s => {
+            const header = document.querySelector('[data-header]') as HTMLElement | null
+            const isAlt = header?.dataset.headerAlt === 'true'
+            if (!isAlt && window.scrollY <= 50) {
+              s.classList.remove('bg-gray-800')
+              s.classList.add('bg-white')
+            }
+          })
         })
       })
     }

@@ -19,18 +19,22 @@ const isActive = (href: string) => currentPath === href || currentPath.startsWit
 
 <header
   data-header
+  data-header-alt={alt ? 'true' : 'false'}
   class:list={[
     'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-    alt ? 'bg-black/90 backdrop-blur-md' : 'bg-transparent'
+    alt ? 'bg-white/95 backdrop-blur-md shadow-sm' : 'bg-transparent'
   ]}
 >
   <div class="max-w-[1440px] mx-auto px-6 lg:px-12 flex items-center justify-between h-20 lg:h-24">
-    <!-- Logo -->
+    <!-- Logo: white for hero overlay, black for inner pages -->
     <a href={base} class="relative z-10 flex-shrink-0">
       <img
-        src={`${base}assets/images/logos/kalterra-white.png`}
+        src={alt ? `${base}assets/images/logos/kalterra-black.png` : `${base}assets/images/logos/kalterra-white.png`}
         alt="Kalterra"
         class="h-8 lg:h-10 w-auto"
+        data-logo
+        data-logo-black={`${base}assets/images/logos/kalterra-black.png`}
+        data-logo-white={`${base}assets/images/logos/kalterra-white.png`}
       />
     </a>
 
@@ -41,7 +45,7 @@ const isActive = (href: string) => currentPath === href || currentPath.startsWit
           href={link.href}
           class:list={[
             'text-sm font-medium uppercase tracking-widest hover:text-gold',
-            isActive(link.href) ? 'text-gold' : 'text-white'
+            isActive(link.href) ? 'text-gold' : (alt ? 'text-gray-800' : 'text-white')
           ]}
         >
           {link.label}
@@ -63,11 +67,13 @@ const isActive = (href: string) => currentPath === href || currentPath.startsWit
       aria-label="Open navigation menu"
       aria-expanded="false"
       aria-controls="mobile-menu"
-      class="lg:hidden relative z-10 flex flex-col items-center justify-center w-10 h-10 gap-1.5"
+      class:list={[
+        'lg:hidden relative z-50 flex flex-col items-center justify-center w-10 h-10 gap-1.5',
+      ]}
     >
-      <span class="block w-7 h-0.5 bg-white transition-transform" aria-hidden="true"></span>
-      <span class="block w-7 h-0.5 bg-white transition-transform" aria-hidden="true"></span>
-      <span class="block w-5 h-0.5 bg-white transition-transform ml-auto" aria-hidden="true"></span>
+      <span class:list={['block w-7 h-0.5 transition-transform', alt ? 'bg-gray-800' : 'bg-white']} aria-hidden="true"></span>
+      <span class:list={['block w-7 h-0.5 transition-transform', alt ? 'bg-gray-800' : 'bg-white']} aria-hidden="true"></span>
+      <span class:list={['block w-5 h-0.5 transition-transform ml-auto', alt ? 'bg-gray-800' : 'bg-white']} aria-hidden="true"></span>
     </button>
   </div>
 
@@ -77,7 +83,7 @@ const isActive = (href: string) => currentPath === href || currentPath.startsWit
     data-mobile-menu
     role="dialog"
     aria-label="Navigation menu"
-    class="mobile-menu fixed inset-0 bg-black/98 z-40 flex flex-col items-center justify-center lg:hidden"
+    class="mobile-menu fixed inset-0 bg-white z-40 flex flex-col items-center justify-center lg:hidden"
   >
     <nav class="flex flex-col items-center gap-8">
       {navLinks.map(link => (
@@ -85,7 +91,7 @@ const isActive = (href: string) => currentPath === href || currentPath.startsWit
           href={link.href}
           class:list={[
             'text-2xl font-medium uppercase tracking-widest hover:text-gold',
-            isActive(link.href) ? 'text-gold' : 'text-white'
+            isActive(link.href) ? 'text-gold' : 'text-gray-900'
           ]}
         >
           {link.label}
