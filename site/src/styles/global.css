@@ -176,23 +176,3 @@ a, button, [role="button"] {
   touch-action: manipulation;
 }
 
-/* Placeholder sections — visually flag for client review */
-.placeholder-flag {
-  position: relative;
-  border: 2px dashed rgba(201, 168, 76, 0.4);
-  border-radius: 4px;
-}
-.placeholder-flag::before {
-  content: "AWAITING CLIENT INPUT";
-  position: absolute;
-  top: -1px;
-  right: -1px;
-  background: var(--color-gold);
-  color: #000;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 4px 10px;
-  z-index: 10;
-}
