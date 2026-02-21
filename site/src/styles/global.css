@@ -92,12 +92,12 @@
 }
 
 /* Team member card hover */
-.team-card .team-overlay {
-  opacity: 0;
-  transition: opacity 0.4s ease;
+.team-card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
-.team-card:hover .team-overlay {
-  opacity: 1;
+.team-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
 }
 
 /* Nav mobile menu */
