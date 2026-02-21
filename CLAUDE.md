@@ -4,10 +4,7 @@
 Astro + Tailwind CSS, deployed to GitHub Pages.
 
 ## Design Direction
-Emulate the clean, modern aesthetic of alpinestartdev.com. Dark/sophisticated palette with Kalterra's brand colors (black, white, gold).
-
-## Skills
-Before making any frontend or design changes, read and follow the web design guidelines at ~/.agents/skills/web-design-guidelines/
+Emulate the clean, modern aesthetic of alpinestartdev.com. White background with Kalterra's brand accents (black, gold).
 
 ## Important Notes
 - All placeholder content is marked with HTML comments containing "PLACEHOLDER"
