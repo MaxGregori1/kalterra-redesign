@@ -1,3 +1,12 @@
+import type { ImageMetadata } from 'astro'
+import clintNolenImg from '../assets/images/team/Clint_Nolen.jpg'
+import deanLontosImg from '../assets/images/team/Dean_Lontos.jpg'
+import nicBalsamoImg from '../assets/images/team/Nic_Balsamo.jpg'
+import brandonMarlowImg from '../assets/images/team/Brandon_Marlow.jpg'
+import kyleParkerImg from '../assets/images/team/Kyle_Parker.jpg'
+import anthonyBalsamoImg from '../assets/images/team/Anthony_Balsamo.jpg'
+import chrisBellImg from '../assets/images/team/Chris_Bell.jpg'
+
 export interface TeamMember {
   name: string
   slug: string
@@ -6,7 +15,7 @@ export interface TeamMember {
   education: string[]
   credentials?: string[]
   email: string
-  image: string
+  image: ImageMetadata | string
 }
 
 export function getTeam(base: string): TeamMember[] {
@@ -18,7 +27,7 @@ export function getTeam(base: string): TeamMember[] {
       bio: 'Clint has grown up around various aspects of real estate and specializes in business development, finance, and construction. He is a co-founder and Managing Partner of Kalterra. Clint has served in board positions including Vice President of the City of Dallas Housing Finance Corporation, Vice Chairman of the City of Dallas Planning & Zoning Board of Adjustments, Board Chairman of Grace Academy of Dallas and as a Board Member for the Entrepreneur Organization of Dallas.',
       education: ['Texas A&M University, BS in Industrial Distribution', 'Southern Methodist University, MBA in Finance & Real Estate Investment'],
       email: 'clint@kalterra.com',
-      image: `${base}assets/images/team/Clint_Nolen.jpg`,
+      image: clintNolenImg,
     },
     {
       name: 'Dean Lontos',
@@ -27,7 +36,7 @@ export function getTeam(base: string): TeamMember[] {
       bio: 'Dean Lontos is involved at the strategic and capital-markets level, working with partners on firm direction, major investment decisions, and capital relationships. He has more than 20 years of experience in real estate investment, development, and private credit, and has completed more than $2 billion in transactions, including large-scale multifamily acquisitions, repositionings, and ground-up developments.',
       education: ['University of Texas at Austin, BBA in Finance & Real Estate'],
       email: 'dean@kalterra.com',
-      image: `${base}assets/images/team/Dean_Lontos.jpg`,
+      image: deanLontosImg,
     },
     {
       name: 'Nic Balsamo',
@@ -36,7 +45,7 @@ export function getTeam(base: string): TeamMember[] {
       bio: 'Nic joined Kalterra in 2018 and has over 6 years of commercial real estate experience, specializing in acquisitions and development. His responsibilities include acquisitions, business development, and project management.',
       education: ['Florida State University, BS in Real Estate & Finance'],
       email: 'nic@kalterra.com',
-      image: `${base}assets/images/team/Nic_Balsamo.jpg`,
+      image: nicBalsamoImg,
     },
     {
       name: 'Brandon Marlow',
@@ -46,7 +55,7 @@ export function getTeam(base: string): TeamMember[] {
       education: ['University of Texas at Tyler, BS in Finance'],
       credentials: ['CFA Charterholder'],
       email: 'brandon@kalterra.com',
-      image: `${base}assets/images/team/Brandon_Marlow.jpg`,
+      image: brandonMarlowImg,
     },
     {
       name: 'Kyle Parker',
@@ -55,7 +64,7 @@ export function getTeam(base: string): TeamMember[] {
       bio: "Kyle joined Kalterra in the summer of 2024, bringing 7 years of commercial real estate experience with a focus on multifamily acquisitions. Before joining Kalterra, Kyle was the AVP of Investments at Equity Residential, where he concentrated on acquisitions across Texas. In his current role, he leads Kalterra's acquisitions team and is responsible for identifying and generating both on-market and off-market acquisition opportunities.",
       education: ['Texas A&M University – BBA in Accounting – Mays Business School', 'Texas A&M University – Master of Real Estate (MRE) Program – Mays Business School'],
       email: 'kyle@kalterra.com',
-      image: `${base}assets/images/team/Kyle_Parker.jpg`,
+      image: kyleParkerImg,
     },
     {
       name: 'Anthony Balsamo',
@@ -64,7 +73,7 @@ export function getTeam(base: string): TeamMember[] {
       bio: "Anthony joined Kalterra in the fall of 2025, bringing five years of technology consulting and finance experience, including prior roles with Deloitte and Accenture. At Kalterra, Anthony supports the firm's investment and development platform by contributing to asset-level underwriting, financial modeling, and market analysis across multifamily and mixed-use opportunities, while leveraging data workflows and analytical tools to enhance consistency, efficiency, and decision-making across the firm's deal evaluation and asset strategy.",
       education: [],
       email: '',
-      image: `${base}assets/images/team/Anthony_Balsamo.jpg`,
+      image: anthonyBalsamoImg,
     },
     {
       name: 'Chris Bell',
@@ -74,7 +83,7 @@ export function getTeam(base: string): TeamMember[] {
       education: ['Texas State University, BBA in Accounting', 'Western Governors University, MS in Accounting'],
       credentials: ['Certified Public Accountant'],
       email: 'chris@kalterra.com',
-      image: `${base}assets/images/team/Chris_Bell.jpg`,
+      image: chrisBellImg,
     },
     {
       name: 'Dylan',

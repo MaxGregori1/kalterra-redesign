@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro'
+import { Image } from 'astro:assets'
 import { getTeam } from '../../data/team'
 const base = import.meta.env.BASE_URL
 const team = getTeam(base)
@@ -26,11 +27,21 @@ const team = getTeam(base)
           <a href={`${base}team/${member.slug}/`} class="team-card group block">
             <!-- PLACEHOLDER — replace with updated headshot -->
             <div class="aspect-square overflow-hidden bg-gray-100 mb-6">
-              <img
-                src={member.image}
-                alt={member.name}
-                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
+              {typeof member.image === 'string' ? (
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              ) : (
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  width={900}
+                  quality={85}
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              )}
             </div>
             <h4 class="text-gray-900 font-semibold">{member.name}</h4>
             <p class="text-gold text-base mt-1">{member.title}</p>
