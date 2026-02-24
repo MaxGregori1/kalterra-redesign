@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3:*)",
+      "Bash(npm create astro:*)",
+      "Bash(npm install)",
+      "Bash(npx astro add:*)",
+      "Bash(bash /Users/maxgregori/Desktop/Dev/Kalterra-Redesign/download-assets.sh)"
+    ]
+  }
+}
