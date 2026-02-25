@@ -16,6 +16,7 @@ export interface TeamMember {
   credentials?: string[]
   email: string
   image: ImageMetadata | string
+  imagePosition?: string
 }
 
 export function getTeam(base: string): TeamMember[] {
@@ -28,6 +29,7 @@ export function getTeam(base: string): TeamMember[] {
       education: ['Texas A&M University, BS in Industrial Distribution', 'Southern Methodist University, MBA in Finance & Real Estate Investment'],
       email: 'clint@kalterra.com',
       image: clintNolenImg,
+      imagePosition: '55% center',
     },
     {
       name: 'Dean Lontos',

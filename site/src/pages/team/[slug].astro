@@ -41,6 +41,7 @@ const { member } = Astro.props
                 src={member.image}
                 alt={member.name}
                 class="w-full h-full object-cover"
+                style={member.imagePosition ? `object-position: ${member.imagePosition}` : undefined}
               />
             ) : (
               <Image
@@ -49,6 +50,7 @@ const { member } = Astro.props
                 width={1060}
                 quality={85}
                 class="w-full h-full object-cover"
+                style={member.imagePosition ? `object-position: ${member.imagePosition}` : undefined}
               />
             )}
           </div>
