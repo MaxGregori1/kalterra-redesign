@@ -201,9 +201,7 @@ const futureProjectsWithImages = [
   },
 ]
 
-const futureComingSoon = [
-  { name: 'VALA', location: 'Texas' },
-]
+const futureComingSoon = []
 ---
 
 <Layout title="Portfolio" headerAlt={true}>
@@ -320,13 +318,6 @@ const futureComingSoon = [
           </a>
         ))}
 
-        {futureComingSoon.map((project) => (
-          <div class="border border-gray-200 p-8 text-center aspect-[4/3] flex flex-col items-center justify-center">
-            <p class="text-sm uppercase tracking-widest text-gold mb-2">Coming Soon</p>
-            <h4 class="text-gray-900 font-bold text-xl">{project.name}</h4>
-            <p class="text-gray-500 mt-2">{project.location}</p>
-          </div>
-        ))}
       </div>
     </div>
   </section>
