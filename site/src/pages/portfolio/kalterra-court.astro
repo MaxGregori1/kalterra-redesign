@@ -1,25 +1,21 @@
 ---
 import Layout from '../../layouts/Layout.astro'
-import Gallery from '../../components/Gallery.astro'
 import InvestmentStats from '../../components/InvestmentStats.astro'
 const base = import.meta.env.BASE_URL
 
 const project = {
-  name: 'Stonebrook',
-  type: 'Retail',
-  location: 'Frisco, TX',
+  name: 'Kalterra Court',
+  type: 'Townhomes',
+  location: 'Texas',
   status: 'Exited',
-  units: null,
+  units: 5,
   acreage: null,
-  sqft: '14,030 SF',
-  description: "Kalterra developed a 14,030 SF retail building in Frisco, TX at the intersection of Dallas North Tollway and Stonebrook Pkwy. Tenants include Subway, Rush Cycle, Grey's Salon, and other local businesses.",
+  sqft: null,
+  description: 'Details coming soon.',
   amenities: [],
   website: null,
-  heroImage: `${base}assets/images/portfolio/stonebrook-court/01.jpg`,
-  gallery: [
-    { src: `${base}assets/images/portfolio/stonebrook-court/01.jpg`, alt: 'Stonebrook Court' },
-    { src: `${base}assets/images/portfolio/stonebrook-court/02.webp`, alt: 'Aerial View' },
-  ],
+  heroImage: `${base}assets/images/portfolio/placeholder.svg`,
+  gallery: [],
 }
 ---
 
@@ -46,7 +42,7 @@ const project = {
   </section>
 
   <!-- INVESTMENT PERFORMANCE -->
-  <InvestmentStats realizedReturn="8.8%" equityMultiple="1.41x" exitDate="1/1/2022" holdPeriod="60 months" />
+  <InvestmentStats realizedReturn="5.5%" equityMultiple="1.16x" exitDate="4/1/2020" holdPeriod="34 months" />
 
   <!-- DETAILS -->
   <section class="bg-white pb-16 lg:pb-24">
@@ -70,51 +66,20 @@ const project = {
                 <dd class="text-gray-900 mt-1">{project.units}</dd>
               </div>
             )}
-            {project.sqft && (
-              <div>
-                <dt class="text-gray-500 text-sm uppercase tracking-wider">Square Footage</dt>
-                <dd class="text-gray-900 mt-1">{project.sqft}</dd>
-              </div>
-            )}
-            {project.acreage && (
-              <div>
-                <dt class="text-gray-500 text-sm uppercase tracking-wider">Acreage</dt>
-                <dd class="text-gray-900 mt-1">{project.acreage}</dd>
-              </div>
-            )}
             <div>
               <dt class="text-gray-500 text-sm uppercase tracking-wider">Status</dt>
               <dd class="text-[#c9a85c] mt-1">Exited</dd>
             </div>
-            {project.website && (
-              <div>
-                <dt class="text-gray-500 text-sm uppercase tracking-wider">Website</dt>
-                <dd class="mt-1"><a href={`https://${project.website}`} target="_blank" rel="noopener" class="text-gold hover:text-gold-light transition-colors">{project.website}</a></dd>
-              </div>
-            )}
           </dl>
         </div>
 
         <!-- Description -->
         <div class="lg:col-span-2">
           <p class="text-gray-600 text-lg leading-relaxed">{project.description}</p>
-          {project.amenities.length > 0 && (
-            <div class="mt-10">
-              <h4 class="text-gray-900 text-lg font-semibold mb-4">Amenities</h4>
-              <div class="flex flex-wrap gap-3">
-                {project.amenities.map((amenity) => (
-                  <span class="px-4 py-2 border border-gray-200 text-gray-600 text-sm">{amenity}</span>
-                ))}
-              </div>
-            </div>
-          )}
         </div>
       </div>
     </div>
   </section>
-
-  <!-- GALLERY -->
-  {project.gallery.length > 0 && <Gallery images={project.gallery} />}
 
   <!-- CTA -->
   <section class="bg-gray-50 py-16 lg:py-24 border-t border-gray-200">

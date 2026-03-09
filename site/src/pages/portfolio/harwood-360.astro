@@ -1,13 +1,14 @@
 ---
 import Layout from '../../layouts/Layout.astro'
 import Gallery from '../../components/Gallery.astro'
+import InvestmentStats from '../../components/InvestmentStats.astro'
 const base = import.meta.env.BASE_URL
 
 const project = {
-  name: 'Harwood & 360',
+  name: 'Hardwood & 360',
   type: 'Retail',
   location: 'Euless, TX',
-  status: 'Completed 2018',
+  status: 'Exited',
   units: null,
   acreage: null,
   sqft: '14,000 SF',
@@ -37,13 +38,16 @@ const project = {
   </section>
 
   <!-- HERO IMAGE -->
-  <section class="bg-white pb-12 lg:pb-16">
+  <section class="bg-white pb-12">
     <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
       <div class="aspect-[21/9] overflow-hidden">
         <img src={project.heroImage} alt={project.name} class="w-full h-full object-cover" />
       </div>
     </div>
   </section>
+
+  <!-- INVESTMENT PERFORMANCE -->
+  <InvestmentStats realizedReturn="35.6%" equityMultiple="3.84x" exitDate="3/1/2024" holdPeriod="83 months" />
 
   <!-- DETAILS -->
   <section class="bg-white pb-16 lg:pb-24">
@@ -81,7 +85,7 @@ const project = {
             )}
             <div>
               <dt class="text-gray-500 text-sm uppercase tracking-wider">Status</dt>
-              <dd class="text-gold mt-1">{project.status}</dd>
+              <dd class="text-[#c9a85c] mt-1">Exited</dd>
             </div>
             {project.website && (
               <div>

@@ -2,7 +2,7 @@
 import Layout from '../../layouts/Layout.astro'
 const base = import.meta.env.BASE_URL
 
-const acquisitions = [
+const activeProjects = [
   {
     name: 'Kinstead',
     id: 'kinstead',
@@ -10,33 +10,6 @@ const acquisitions = [
     type: 'Acquisition',
     location: 'McKinney, TX',
     image: `${base}assets/images/portfolio/kinstead.jpeg`,
-  },
-  {
-    name: 'Gray Branch',
-    id: 'gray-branch',
-    slug: 'gray-branch',
-    type: 'Multi Family',
-    location: 'McKinney, TX',
-    image: `${base}assets/images/portfolio/gray-branch.webp`,
-  },
-]
-
-const developments = [
-  {
-    name: 'Arden by Kalterra at Kohlers Crossing',
-    id: 'arden-kohlers',
-    slug: 'arden-at-kohlers-crossing',
-    type: 'Mixed-Use / Multi Family',
-    location: 'Kyle, TX',
-    image: `${base}assets/images/portfolio/arden-kohlers-crossing.webp`,
-  },
-  {
-    name: 'The Hamilton',
-    id: 'hamilton',
-    slug: 'the-hamilton',
-    type: 'Multi Family',
-    location: 'Waxahachie, TX',
-    image: `${base}assets/images/portfolio/hamilton.webp`,
   },
   {
     name: 'Midtown GP',
@@ -47,20 +20,31 @@ const developments = [
     image: `${base}assets/images/portfolio/midtown-gp.webp`,
   },
   {
-    name: 'Park Place',
-    id: 'park-place',
-    slug: 'park-place',
-    type: 'Multi Family',
-    location: 'Waxahachie, TX',
-    image: `${base}assets/images/portfolio/park-place.webp`,
+    name: 'Arden at Kohler\'s Crossing',
+    id: 'arden-kohlers',
+    slug: 'arden-at-kohlers-crossing',
+    type: 'Mixed-Use / Multi Family',
+    location: 'Kyle, TX',
+    image: `${base}assets/images/portfolio/arden-kohlers-crossing.webp`,
   },
   {
-    name: 'The Fitzgerald',
-    id: 'fitzgerald',
-    slug: 'the-fitzgerald',
+    name: 'Arden 231',
+    id: 'arden-231',
+    slug: 'arden-231',
     type: 'Multi Family',
-    location: 'Waxahachie, TX',
-    image: `${base}assets/images/portfolio/fitzgerald.webp`,
+    location: 'San Marcos, TX',
+    image: `${base}assets/images/portfolio/arden-231.jpg`,
+  },
+]
+
+const exitedDevelopment = [
+  {
+    name: 'Gray Branch Luxury Apartments',
+    id: 'gray-branch',
+    slug: 'gray-branch',
+    type: 'Multi Family',
+    location: 'McKinney, TX',
+    image: `${base}assets/images/portfolio/gray-branch.webp`,
   },
   {
     name: 'McCarty Commons',
@@ -71,12 +55,133 @@ const developments = [
     image: `${base}assets/images/portfolio/mccarty-commons.webp`,
   },
   {
-    name: 'Arden by Kalterra 231',
-    id: 'arden-231',
-    slug: 'arden-231',
+    name: 'Park Place',
+    id: 'park-place',
+    slug: 'park-place',
+    type: 'Multi Family',
+    location: 'Waxahachie, TX',
+    image: `${base}assets/images/portfolio/park-place.webp`,
+  },
+  {
+    name: 'Reagan',
+    id: 'reagan',
+    slug: 'reagan',
+    type: 'Townhomes',
+    location: 'Texas',
+    image: `${base}assets/images/portfolio/placeholder.svg`,
+  },
+  {
+    name: 'Kalterra Court',
+    id: 'kalterra-court',
+    slug: 'kalterra-court',
+    type: 'Townhomes',
+    location: 'Texas',
+    image: `${base}assets/images/portfolio/placeholder.svg`,
+  },
+  {
+    name: 'Royalton 62307',
+    id: 'royalton-62307',
+    slug: 'royalton-62307',
+    type: 'Single Family Home',
+    location: 'Texas',
+    image: `${base}assets/images/portfolio/placeholder.svg`,
+  },
+]
+
+const exitedRetail = [
+  {
+    name: 'Hardwood & 360',
+    id: 'hardwood-360',
+    slug: 'harwood-360',
+    type: 'Retail',
+    location: 'Euless, TX',
+    image: `${base}assets/images/portfolio/harwood-360.jpg`,
+  },
+  {
+    name: 'Virginia Heights',
+    id: 'virginia-heights',
+    slug: 'virginia-heights',
+    type: 'Retail',
+    location: 'McKinney, TX',
+    image: `${base}assets/images/portfolio/virginia-heights.webp`,
+  },
+  {
+    name: 'Stonebrook',
+    id: 'stonebrook',
+    slug: 'stonebrook-court',
+    type: 'Retail',
+    location: 'Frisco, TX',
+    image: `${base}assets/images/portfolio/stonebrook-court.jpg`,
+  },
+  {
+    name: 'HO Texas 3',
+    id: 'ho-texas-3',
+    slug: 'ho-texas-3',
+    type: 'Retail',
+    location: 'Texas',
+    image: `${base}assets/images/portfolio/placeholder.svg`,
+  },
+]
+
+const exitedLand = [
+  {
+    name: 'The Fitzgerald',
+    id: 'fitzgerald',
+    slug: 'the-fitzgerald',
+    type: 'Land',
+    location: 'Waxahachie, TX',
+    image: `${base}assets/images/portfolio/fitzgerald.webp`,
+  },
+  {
+    name: 'FM471',
+    id: 'fm471',
+    slug: 'fm471',
+    type: 'Land',
+    location: 'Texas',
+    image: `${base}assets/images/portfolio/placeholder.svg`,
+  },
+  {
+    name: 'Culebra',
+    id: 'culebra',
+    slug: 'vala-at-culebra',
+    type: 'Land',
+    location: 'San Antonio, TX',
+    image: `${base}assets/images/portfolio/vala-culebra.jpg`,
+  },
+]
+
+const futureProjectsWithImages = [
+  {
+    name: 'VALA at Richie',
+    id: 'vala-richie',
+    slug: 'vala-at-ritchie',
+    type: 'Multi Family',
+    location: 'Waco, TX',
+    image: `${base}assets/images/portfolio/vala-ritchie.webp`,
+  },
+  {
+    name: 'VALA at Solms Landing',
+    id: 'vala-solms-landing',
+    slug: 'vala-at-solms-landing',
+    type: 'Multi Family',
+    location: 'New Braunfels, TX',
+    image: `${base}assets/images/portfolio/vala-solms-landing.webp`,
+  },
+  {
+    name: 'VALA at Hunter Road',
+    id: 'vala-hunter-road',
+    slug: 'vala-at-hunter-road',
     type: 'Multi Family',
     location: 'San Marcos, TX',
-    image: `${base}assets/images/portfolio/arden-231.jpg`,
+    image: `${base}assets/images/portfolio/vala-hunter-road.jpg`,
+  },
+  {
+    name: 'VALA Princeton',
+    id: 'vala-princeton',
+    slug: 'vala-princeton',
+    type: 'Multi Family',
+    location: 'Princeton, TX',
+    image: `${base}assets/images/portfolio/vala-princeton.webp`,
   },
   {
     name: 'The Madison',
@@ -96,80 +201,8 @@ const developments = [
   },
 ]
 
-const retail = [
-  {
-    name: 'Stonebrook Court Retail Center',
-    id: 'stonebrook',
-    slug: 'stonebrook-court',
-    type: 'Retail',
-    location: 'Frisco, TX',
-    image: `${base}assets/images/portfolio/stonebrook-court.jpg`,
-  },
-  {
-    name: 'Harwood & 360',
-    id: 'harwood-360',
-    slug: 'harwood-360',
-    type: 'Retail',
-    location: 'Euless, TX',
-    image: `${base}assets/images/portfolio/harwood-360.jpg`,
-  },
-  {
-    name: 'Virginia Heights Retail',
-    id: 'virginia-heights',
-    slug: 'virginia-heights',
-    type: 'Retail',
-    location: 'McKinney, TX',
-    image: `${base}assets/images/portfolio/virginia-heights.webp`,
-  },
-]
-
-const vala = [
-  {
-    name: 'VALA at Hunter Road',
-    id: 'vala-hunter-road',
-    slug: 'vala-at-hunter-road',
-    type: 'Multi Family',
-    location: 'San Marcos, TX',
-    image: `${base}assets/images/portfolio/vala-hunter-road.jpg`,
-  },
-  {
-    name: 'VALA at Culebra',
-    id: 'vala-culebra',
-    slug: 'vala-at-culebra',
-    type: 'Multi Family',
-    location: 'San Antonio, TX',
-    image: `${base}assets/images/portfolio/vala-culebra.jpg`,
-  },
-  {
-    name: 'VALA Princeton',
-    id: 'vala-princeton',
-    slug: 'vala-princeton',
-    type: 'Multi Family',
-    location: 'Princeton, TX',
-    image: `${base}assets/images/portfolio/vala-princeton.webp`,
-  },
-  {
-    name: 'VALA at Ritchie',
-    id: 'vala-ritchie',
-    slug: 'vala-at-ritchie',
-    type: 'Multi Family',
-    location: 'Waco, TX',
-    image: `${base}assets/images/portfolio/vala-ritchie.webp`,
-  },
-  {
-    name: 'VALA at Solms Landing',
-    id: 'vala-solms-landing',
-    slug: 'vala-at-solms-landing',
-    type: 'Multi Family',
-    location: 'New Braunfels, TX',
-    image: `${base}assets/images/portfolio/vala-solms-landing.webp`,
-  },
-]
-
-const valaUpcoming = [
-  { name: 'VALA Waco', location: 'Waco, TX' },
-  { name: 'VALA Princeton', location: 'Princeton, TX' },
-  { name: 'VALA New Braunfels', location: 'New Braunfels, TX' },
+const futureComingSoon = [
+  { name: 'VALA', location: 'Texas' },
 ]
 ---
 
@@ -190,23 +223,22 @@ const valaUpcoming = [
   <section class="bg-white pb-8">
     <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
       <nav class="flex flex-wrap gap-4 lg:gap-8 border-b border-gray-200 pb-6">
-        <a href="#acquisitions" class="text-sm uppercase tracking-widest text-gold font-medium hover:text-gold-light">Acquisitions</a>
-        <a href="#developments" class="text-sm uppercase tracking-widest text-gray-500 font-medium hover:text-gray-900">Development</a>
-        <a href="#vala" class="text-sm uppercase tracking-widest text-gray-500 font-medium hover:text-gray-900">VALA</a>
-        <a href="#retail" class="text-sm uppercase tracking-widest text-gray-500 font-medium hover:text-gray-900">Retail</a>
+        <a href="#active-projects" class="text-sm uppercase tracking-widest text-gold font-medium hover:text-gold-light">Active Projects</a>
+        <a href="#exited-projects" class="text-sm uppercase tracking-widest text-gray-500 font-medium hover:text-gray-900">Exited Projects</a>
+        <a href="#future-projects" class="text-sm uppercase tracking-widest text-gray-500 font-medium hover:text-gray-900">Future Projects</a>
       </nav>
     </div>
   </section>
 
   <!-- ============================================
-       ACQUISITIONS
+       ACTIVE PROJECTS
        ============================================ -->
-  <section id="acquisitions" class="bg-white pb-20 lg:pb-28">
+  <section id="active-projects" class="bg-white pb-20 lg:pb-28">
     <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
-      <h2 class="text-gray-900 mb-10">Acquisitions</h2>
+      <h2 class="text-gray-900 mb-10">Active Projects</h2>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {acquisitions.map((project) => (
+        {activeProjects.map((project) => (
           <a href={`${base}portfolio/${project.slug}/`} id={project.id} class="project-card group relative aspect-[4/3] overflow-hidden">
             <img src={project.image} alt={project.name} class="w-full h-full object-cover" />
             <div class="project-overlay absolute inset-0 bg-black/60 flex flex-col justify-end p-6">
@@ -220,35 +252,16 @@ const valaUpcoming = [
   </section>
 
   <!-- ============================================
-       DEVELOPMENTS
+       EXITED PROJECTS
        ============================================ -->
-  <section id="developments" class="bg-gray-50 py-20 lg:py-28">
+  <section id="exited-projects" class="bg-gray-50 py-20 lg:py-28">
     <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
-      <h2 class="text-gray-900 mb-10">Development</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {developments.map((project) => (
-          <a href={`${base}portfolio/${project.slug}/`} id={project.id} class="project-card group relative aspect-[4/3] overflow-hidden">
-            <img src={project.image} alt={project.name} class="w-full h-full object-cover" />
-            <div class="project-overlay absolute inset-0 bg-black/60 flex flex-col justify-end p-6">
-              <p class="text-xs uppercase tracking-widest text-gold mb-1">{project.type} &middot; {project.location}</p>
-              <h4 class="text-white font-bold text-xl">{project.name}</h4>
-            </div>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
+      <h2 class="text-gray-900 mb-12">Exited Projects</h2>
 
-  <!-- ============================================
-       VALA
-       ============================================ -->
-  <section id="vala" class="bg-white py-20 lg:py-28">
-    <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
-      <h2 class="text-gray-900 mb-4">VALA</h2>
-      <p class="text-gray-500 text-lg mb-10">Kalterra's multifamily development brand</p>
-
+      <!-- Development subsection -->
+      <h3 class="text-gray-900 text-xl font-semibold mb-8">Development</h3>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-        {vala.map((project) => (
+        {exitedDevelopment.map((project) => (
           <a href={`${base}portfolio/${project.slug}/`} id={project.id} class="project-card group relative aspect-[4/3] overflow-hidden">
             <img src={project.image} alt={project.name} class="w-full h-full object-cover" />
             <div class="project-overlay absolute inset-0 bg-black/60 flex flex-col justify-end p-6">
@@ -259,30 +272,45 @@ const valaUpcoming = [
         ))}
       </div>
 
-      <!-- Upcoming VALA developments -->
-      <div>
-        <h3 class="text-gray-900 mb-6">Upcoming Developments</h3>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {valaUpcoming.map((project) => (
-            <div class="border border-gray-200 p-8 text-center">
-              <p class="text-sm uppercase tracking-widest text-gold mb-2">Coming Soon</p>
-              <h4 class="text-gray-900 font-bold text-xl">{project.name}</h4>
-              <p class="text-gray-500 mt-2">{project.location}</p>
+      <!-- Retail subsection -->
+      <h3 class="text-gray-900 text-xl font-semibold mb-8">Retail</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        {exitedRetail.map((project) => (
+          <a href={`${base}portfolio/${project.slug}/`} id={project.id} class="project-card group relative aspect-[4/3] overflow-hidden">
+            <img src={project.image} alt={project.name} class="w-full h-full object-cover" />
+            <div class="project-overlay absolute inset-0 bg-black/60 flex flex-col justify-end p-6">
+              <p class="text-xs uppercase tracking-widest text-gold mb-1">{project.type} &middot; {project.location}</p>
+              <h4 class="text-white font-bold text-xl">{project.name}</h4>
             </div>
-          ))}
-        </div>
+          </a>
+        ))}
+      </div>
+
+      <!-- Land subsection -->
+      <h3 class="text-gray-900 text-xl font-semibold mb-8">Land</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {exitedLand.map((project) => (
+          <a href={`${base}portfolio/${project.slug}/`} id={project.id} class="project-card group relative aspect-[4/3] overflow-hidden">
+            <img src={project.image} alt={project.name} class="w-full h-full object-cover" />
+            <div class="project-overlay absolute inset-0 bg-black/60 flex flex-col justify-end p-6">
+              <p class="text-xs uppercase tracking-widest text-gold mb-1">{project.type} &middot; {project.location}</p>
+              <h4 class="text-white font-bold text-xl">{project.name}</h4>
+            </div>
+          </a>
+        ))}
       </div>
     </div>
   </section>
 
   <!-- ============================================
-       RETAIL
+       FUTURE PROJECTS
        ============================================ -->
-  <section id="retail" class="bg-gray-50 py-20 lg:py-28">
+  <section id="future-projects" class="bg-white py-20 lg:py-28">
     <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
-      <h2 class="text-gray-900 mb-10">Retail</h2>
+      <h2 class="text-gray-900 mb-10">Future Projects</h2>
+
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {retail.map((project) => (
+        {futureProjectsWithImages.map((project) => (
           <a href={`${base}portfolio/${project.slug}/`} id={project.id} class="project-card group relative aspect-[4/3] overflow-hidden">
             <img src={project.image} alt={project.name} class="w-full h-full object-cover" />
             <div class="project-overlay absolute inset-0 bg-black/60 flex flex-col justify-end p-6">
@@ -291,9 +319,56 @@ const valaUpcoming = [
             </div>
           </a>
         ))}
+
+        {futureComingSoon.map((project) => (
+          <div class="border border-gray-200 p-8 text-center aspect-[4/3] flex flex-col items-center justify-center">
+            <p class="text-sm uppercase tracking-widest text-gold mb-2">Coming Soon</p>
+            <h4 class="text-gray-900 font-bold text-xl">{project.name}</h4>
+            <p class="text-gray-500 mt-2">{project.location}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
+
+  <!-- ============================================
+       COMMENTED OUT — The Hamilton
+       ============================================ -->
+  <!--
+  <a href="${base}portfolio/the-hamilton/" id="hamilton" class="project-card group relative aspect-[4/3] overflow-hidden">
+    <img src="${base}assets/images/portfolio/hamilton.webp" alt="The Hamilton" class="w-full h-full object-cover" />
+    <div class="project-overlay absolute inset-0 bg-black/60 flex flex-col justify-end p-6">
+      <p class="text-xs uppercase tracking-widest text-gold mb-1">Multi Family &middot; Waxahachie, TX</p>
+      <h4 class="text-white font-bold text-xl">The Hamilton</h4>
+    </div>
+  </a>
+  -->
+
+  <!-- ============================================
+       COMMENTED OUT — Upcoming VALA Developments
+       ============================================ -->
+  <!--
+  <div>
+    <h3 class="text-gray-900 mb-6">Upcoming Developments</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="border border-gray-200 p-8 text-center">
+        <p class="text-sm uppercase tracking-widest text-gold mb-2">Coming Soon</p>
+        <h4 class="text-gray-900 font-bold text-xl">VALA Waco</h4>
+        <p class="text-gray-500 mt-2">Waco, TX</p>
+      </div>
+      <div class="border border-gray-200 p-8 text-center">
+        <p class="text-sm uppercase tracking-widest text-gold mb-2">Coming Soon</p>
+        <h4 class="text-gray-900 font-bold text-xl">VALA Princeton</h4>
+        <p class="text-gray-500 mt-2">Princeton, TX</p>
+      </div>
+      <div class="border border-gray-200 p-8 text-center">
+        <p class="text-sm uppercase tracking-widest text-gold mb-2">Coming Soon</p>
+        <h4 class="text-gray-900 font-bold text-xl">VALA New Braunfels</h4>
+        <p class="text-gray-500 mt-2">New Braunfels, TX</p>
+      </div>
+    </div>
+  </div>
+  -->
 
   <!-- CTA -->
   <section class="bg-white py-20 lg:py-28 border-t border-gray-200">

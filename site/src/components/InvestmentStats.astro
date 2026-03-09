@@ -1,0 +1,35 @@
+---
+interface Props {
+  realizedReturn: string
+  equityMultiple: string
+  exitDate: string
+  holdPeriod: string
+}
+
+const { realizedReturn, equityMultiple, exitDate, holdPeriod } = Astro.props
+---
+
+<!-- INVESTMENT PERFORMANCE STATS BAR -->
+<div class="bg-gray-50 border-t border-b border-gray-200 mt-0 mb-12 py-7">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+    <p class="text-sm font-semibold tracking-widest uppercase text-gray-900 mb-4 text-center">Investment Performance</p>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div class="text-center border-b border-gray-200 pb-4 md:border-b-0 md:pb-0 md:border-r md:border-gray-200">
+        <p class="text-2xl font-bold text-gold">{realizedReturn}</p>
+        <p class="text-sm uppercase tracking-widest text-gray-500 mt-1">Realized Return</p>
+      </div>
+      <div class="text-center border-b border-gray-200 pb-4 md:border-b-0 md:pb-0 md:border-r md:border-gray-200">
+        <p class="text-2xl font-bold text-gold">{equityMultiple}</p>
+        <p class="text-sm uppercase tracking-widest text-gray-500 mt-1">Realized Equity Multiple</p>
+      </div>
+      <div class="text-center md:border-r md:border-gray-200">
+        <p class="text-2xl font-bold text-gold">{exitDate}</p>
+        <p class="text-sm uppercase tracking-widest text-gray-500 mt-1">Exit Date</p>
+      </div>
+      <div class="text-center">
+        <p class="text-2xl font-bold text-gold">{holdPeriod}</p>
+        <p class="text-sm uppercase tracking-widest text-gray-500 mt-1">Hold Period</p>
+      </div>
+    </div>
+  </div>
+</div>
