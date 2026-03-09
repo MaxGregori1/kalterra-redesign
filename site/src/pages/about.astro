@@ -106,119 +106,71 @@ const base = import.meta.env.BASE_URL
       </div>
 
       <!-- Capital Markets -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-20 lg:mb-28">
-        <div class="aspect-[4/3] overflow-hidden">
-          <img src={`${base}assets/images/capabilities/capital-markets.webp`} alt="Capital Markets" class="w-full h-full object-cover" />
-        </div>
-        <div>
-          <h3 class="text-gold mb-6">Capital Markets</h3>
-          <p class="text-gray-600 text-lg leading-relaxed">
-            Kalterra has an extensive background in capital formation and a strong ability to access
-            the debt and equity providers to fund our investments. Our underwriting, risk assessment
-            and market analysis expertise allows us to identify the most advantageous financing
-            options available. Through established relationships with a broad spectrum of capital
-            providers, we can minimize risk and maximize returns for our stakeholders.
-          </p>
-        </div>
+      <div class="py-14 border-b border-gray-200">
+        <h3 class="text-gold mb-6">Capital Markets</h3>
+        <p class="text-gray-600 text-lg leading-relaxed">
+          Kalterra has an extensive background in capital formation and a strong ability to access the debt and equity providers to fund our investments. Our underwriting, risk assessment and market analysis expertise allows us to identify the most advantageous financing options available. Through established relationships with a broad spectrum of capital providers, we can minimize risk and maximize returns for our stakeholders.
+        </p>
       </div>
 
-      <!-- Acquisitions (NEW) -->
-      <!-- PLACEHOLDER — client to provide final copy -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-20 lg:mb-28">
-        <div class="order-2 lg:order-1">
-          <h3 class="text-gold mb-6">Acquisitions</h3>
-          <p class="text-gray-600 text-lg leading-relaxed mb-6">
-            Kalterra's acquisitions platform is purpose-built for the Texas multifamily market.
-            Through rigorous, data-driven sourcing and deep local relationships, we identify
-            compelling opportunities across stabilized, value-add, and select development plays
-            in the state's highest-growth corridors.
-          </p>
-          <ul class="space-y-4 text-gray-600 text-lg">
-            <li class="flex items-start gap-3">
-              <span class="text-gold mt-1.5 flex-shrink-0">&bull;</span>
-              <span><strong class="text-gray-900">Texas-focused sourcing</strong> &mdash; Deep market knowledge across DFW, Austin, San Antonio, and emerging Texas submarkets</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-gold mt-1.5 flex-shrink-0">&bull;</span>
-              <span><strong class="text-gray-900">Direct seller relationships</strong> &mdash; Off-market access through established broker and principal networks</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-gold mt-1.5 flex-shrink-0">&bull;</span>
-              <span><strong class="text-gray-900">Institutional underwriting</strong> &mdash; Conservative assumptions with granular rent comp, expense, and capital expenditure analysis</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-gold mt-1.5 flex-shrink-0">&bull;</span>
-              <span><strong class="text-gray-900">Value-add execution</strong> &mdash; Proven ability to identify and implement operational and physical improvements that drive returns</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-gold mt-1.5 flex-shrink-0">&bull;</span>
-              <span><strong class="text-gray-900">Local operational oversight</strong> &mdash; Hands-on asset management ensures business plan execution from day one</span>
-            </li>
-          </ul>
-        </div>
-        <div class="order-1 lg:order-2 aspect-[4/3] overflow-hidden">
-          <img src={`${base}assets/images/about/kalterra-image-2.jpg`} alt="Acquisitions" class="w-full h-full object-cover" />
+      <!-- Acquisitions -->
+      <div class="py-14 border-b border-gray-200">
+        <h3 class="text-gold mb-6">Acquisitions</h3>
+        <p class="text-gray-600 text-lg leading-relaxed mb-12">
+          Kalterra acquires multifamily assets across high-growth Texas markets where strong fundamentals, operational expertise, and disciplined capital deployment can unlock long-term value. Leveraging deep market knowledge and an institutional investment process, we target opportunities where thoughtful execution, strategic capital improvements, and active asset management can enhance performance and drive durable NOI growth. Our approach combines rigorous underwriting, local market insight, and a development-informed perspective to identify assets with clear pathways to value creation while maintaining a strong focus on downside protection.
+        </p>
+
+        <p class="text-sm uppercase tracking-widest text-gold mb-8">Our Acquisition Strategy</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="bg-gray-50 border border-gray-200 rounded-md p-6 transition-all hover:border-gold hover:shadow-md">
+            <p class="font-bold text-gray-900 mb-2">Targeting Institutional-Quality Assets</p>
+            <p class="text-gray-500 text-sm leading-relaxed">We focus on well-located multifamily communities with strong underlying fundamentals and functional unit mixes in high-growth Texas markets.</p>
+          </div>
+          <div class="bg-gray-50 border border-gray-200 rounded-md p-6 transition-all hover:border-gold hover:shadow-md">
+            <p class="font-bold text-gray-900 mb-2">Disciplined Investment Process</p>
+            <p class="text-gray-500 text-sm leading-relaxed">Every opportunity undergoes comprehensive underwriting, including detailed lease audits, operating analysis, and multiple scenario stress tests to ensure strong risk-adjusted returns.</p>
+          </div>
+          <div class="bg-gray-50 border border-gray-200 rounded-md p-6 transition-all hover:border-gold hover:shadow-md">
+            <p class="font-bold text-gray-900 mb-2">Value Creation Through Execution</p>
+            <p class="text-gray-500 text-sm leading-relaxed">We implement targeted value-add strategies such as in-unit renovations, washer/dryer additions, bulk Wi-Fi programs, and operational enhancements to increase revenue and improve resident experience.</p>
+          </div>
+          <div class="bg-gray-50 border border-gray-200 rounded-md p-6 transition-all hover:border-gold hover:shadow-md">
+            <p class="font-bold text-gray-900 mb-2">Development-Informed Perspective</p>
+            <p class="text-gray-500 text-sm leading-relaxed">Our background in ground-up development allows us to evaluate assets relative to replacement cost and apply builder-level discipline to capital planning and execution.</p>
+          </div>
+          <div class="bg-gray-50 border border-gray-200 rounded-md p-6 transition-all hover:border-gold hover:shadow-md">
+            <p class="font-bold text-gray-900 mb-2">Market-Driven Investment Approach</p>
+            <p class="text-gray-500 text-sm leading-relaxed">We prioritize submarkets supported by strong population growth, job creation, and favorable supply-demand dynamics.</p>
+          </div>
+          <div class="bg-gray-50 border border-gray-200 rounded-md p-6 transition-all hover:border-gold hover:shadow-md">
+            <p class="font-bold text-gray-900 mb-2">Aligned Partnerships</p>
+            <p class="text-gray-500 text-sm leading-relaxed">Kalterra invests alongside institutional and private capital partners, ensuring alignment and a shared commitment to long-term value creation.</p>
+          </div>
         </div>
       </div>
 
       <!-- Development -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-20 lg:mb-28">
-        <div class="aspect-[4/3] overflow-hidden">
-          <img src={`${base}assets/images/capabilities/development.webp`} alt="Development" class="w-full h-full object-cover" />
-        </div>
-        <div>
-          <h3 class="text-gold mb-6">Development</h3>
-          <p class="text-gray-600 text-lg leading-relaxed">
-            Kalterra's expertise in site identification, market research, and analytic-driven design
-            enables us to deliver multifamily properties that are tailor fit to their communities,
-            thereby maximizing value for our investors. Our internal teams are dedicated to the entire
-            development process including site selection, entitlement, design, and construction oversight.
-            Our best-in-class design professionals help us continually stay on the forefront of
-            multifamily design, incorporating the latest trends in luxury living.
-          </p>
-        </div>
+      <div class="py-14 border-b border-gray-200">
+        <h3 class="text-gold mb-6">Development</h3>
+        <p class="text-gray-600 text-lg leading-relaxed">
+          Kalterra's expertise in site identification, market research, and analytic-driven design enables us to deliver multifamily properties that are tailor fit to their communities, thereby maximizing value for our investors. Our internal teams are dedicated to the entire development process including site selection, entitlement, design, and construction oversight. Our best-in-class design professionals help us continually stay on the forefront of multifamily design, incorporating the latest trends in luxury living.
+        </p>
       </div>
 
-      <!-- Asset Management (NEW copy) -->
-      <!-- PLACEHOLDER — client to provide final copy -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-20 lg:mb-28">
-        <div class="order-2 lg:order-1">
-          <h3 class="text-gold mb-6">Asset Management</h3>
-          <p class="text-gray-600 text-lg leading-relaxed mb-6">
-            Kalterra's asset management function operates at the ownership and portfolio strategy level,
-            distinct from day-to-day property operations. Our asset management team is responsible for
-            driving investment performance, ensuring alignment between the business plan and on-the-ground
-            execution, and maximizing value creation across the portfolio.
-          </p>
-          <p class="text-gray-600 text-lg leading-relaxed">
-            Core responsibilities include portfolio performance monitoring, investor reporting and
-            communications, capital planning and renovation oversight, market analysis for hold/sell
-            decisions, and disposition strategy. We take a hands-on approach to ensure every asset
-            in our portfolio is positioned for optimal risk-adjusted returns, providing our investors
-            with transparent, data-driven updates throughout the investment lifecycle.
-          </p>
-        </div>
-        <div class="order-1 lg:order-2 aspect-[4/3] overflow-hidden">
-          <img src={`${base}assets/images/capabilities/asset-management.webp`} alt="Asset Management" class="w-full h-full object-cover" />
-        </div>
+      <!-- Asset Management -->
+      <div class="py-14 border-b border-gray-200">
+        <h3 class="text-gold mb-6">Asset Management</h3>
+        <p class="text-gray-600 text-lg leading-relaxed">
+          Kalterra's asset management function operates at the ownership and portfolio strategy level, distinct from day-to-day property operations. Our asset management team is responsible for driving investment performance, ensuring alignment between the business plan and on-the-ground execution, and maximizing value creation across the portfolio. Core responsibilities include portfolio performance monitoring, investor reporting and communications, capital planning and renovation oversight, market analysis for hold/sell decisions, and disposition strategy. We take a hands-on approach to ensure every asset in our portfolio is positioned for optimal risk-adjusted returns, providing our investors with transparent, data-driven updates throughout the investment lifecycle.
+        </p>
       </div>
 
       <!-- Property Management -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-        <div class="aspect-[4/3] overflow-hidden">
-          <img src={`${base}assets/images/about/gym.jpg`} alt="Property Management amenities" class="w-full h-full object-cover" />
-        </div>
-        <div>
-          <h3 class="text-gold mb-6">Property Management</h3>
-          <p class="text-gray-600 text-lg leading-relaxed">
-            For our multifamily investments, Kalterra undergoes an extensive vetting process to
-            ensure we partner with the best possible local property management groups for each of
-            our projects. Our asset management teams take a hands-on approach with our property
-            management partners to ensure we are maximizing value. We work with our property
-            management partners to ensure our branding, collateral, website, and a custom
-            marketing plan is in place months before the lease-up begins.
-          </p>
-        </div>
+      <div class="py-14">
+        <h3 class="text-gold mb-6">Property Management</h3>
+        <p class="text-gray-600 text-lg leading-relaxed">
+          For our multifamily investments, Kalterra undergoes an extensive vetting process to ensure we partner with the best possible local property management groups for each of our projects. Our asset management teams take a hands-on approach with our property management partners to ensure we are maximizing value. We work with our property management partners to ensure our branding, collateral, website, and a custom marketing plan is in place months before the lease-up begins.
+        </p>
       </div>
     </div>
   </section>
