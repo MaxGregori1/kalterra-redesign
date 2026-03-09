@@ -3,3 +3,13 @@ dist/
 .astro/
 .DS_Store
 *.log
+
+# Reference documents and PDFs
+*.pdf
+reference/
+
+# Prompt/instruction files
+prompt-*.md
+
+# Test results
+site/test-results/
