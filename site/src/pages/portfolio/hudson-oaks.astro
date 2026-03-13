@@ -1,21 +1,23 @@
 ---
 import Layout from '../../layouts/Layout.astro'
-import InvestmentStats from '../../components/InvestmentStats.astro'
+import Gallery from '../../components/Gallery.astro'
 const base = import.meta.env.BASE_URL
 
 const project = {
-  name: 'HO Texas 3',
+  name: 'Hudson Oaks',
   type: 'Retail',
   location: 'Texas',
   status: 'Exited',
   units: null,
   acreage: null,
   sqft: null,
-  description: 'Details coming soon.',
+  description: '',
   amenities: [],
   website: null,
-  heroImage: `${base}assets/images/portfolio/placeholder.svg`,
-  gallery: [],
+  heroImage: `${base}assets/images/portfolio/hudson-oaks/header.JPG`,
+  gallery: [
+    { src: `${base}assets/images/portfolio/hudson-oaks/01.JPG`, alt: 'Hudson Oaks' },
+  ],
 }
 ---
 
@@ -40,9 +42,6 @@ const project = {
       </div>
     </div>
   </section>
-
-  <!-- INVESTMENT PERFORMANCE -->
-  <InvestmentStats realizedReturn="34.3%" equityMultiple="3.77x" exitDate="10/1/2020" holdPeriod="54 months" />
 
   <!-- DETAILS -->
   <section class="bg-white pb-16 lg:pb-24">
@@ -70,6 +69,9 @@ const project = {
       </div>
     </div>
   </section>
+
+  <!-- GALLERY -->
+  {project.gallery.length > 0 && <Gallery images={project.gallery} />}
 
   <!-- CTA -->
   <section class="bg-gray-50 py-16 lg:py-24 border-t border-gray-200">

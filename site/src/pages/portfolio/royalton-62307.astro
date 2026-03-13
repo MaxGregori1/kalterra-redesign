@@ -1,20 +1,19 @@
 ---
 import Layout from '../../layouts/Layout.astro'
-import InvestmentStats from '../../components/InvestmentStats.astro'
 const base = import.meta.env.BASE_URL
 
 const project = {
-  name: 'Royalton 62307',
+  name: 'Royalton',
   type: 'Single Family Home',
   location: 'Texas',
   status: 'Exited',
   units: null,
   acreage: null,
   sqft: null,
-  description: 'Details coming soon.',
+  description: '',
   amenities: [],
   website: null,
-  heroImage: `${base}assets/images/portfolio/placeholder.svg`,
+  heroImage: `${base}assets/images/portfolio/royalton-header.jpg`,
   gallery: [],
 }
 ---
@@ -40,9 +39,6 @@ const project = {
       </div>
     </div>
   </section>
-
-  <!-- INVESTMENT PERFORMANCE -->
-  <InvestmentStats realizedReturn="79.7%" equityMultiple="2.65x" exitDate="3/28/2021" holdPeriod="20 months" />
 
   <!-- DETAILS -->
   <section class="bg-white pb-16 lg:pb-24">
