@@ -7,84 +7,68 @@ const activeProjects = [
     name: 'Kinstead',
     id: 'kinstead',
     slug: 'kinstead',
-    type: 'Acquisition',
     location: 'McKinney, TX',
+    units: 376,
     image: `${base}assets/images/portfolio/kinstead.jpeg`,
   },
   {
     name: 'Midtown GP',
     id: 'midtown-gp',
     slug: 'midtown-gp',
-    type: 'Mixed-Use',
     location: 'Grand Prairie, TX',
+    units: 700,
     image: `${base}assets/images/portfolio/midtown-gp.webp`,
   },
   {
     name: 'Arden at Kohler\'s Crossing',
     id: 'arden-kohlers',
     slug: 'arden-at-kohlers-crossing',
-    type: 'Mixed-Use / Multi Family',
     location: 'Kyle, TX',
+    units: 262,
     image: `${base}assets/images/portfolio/arden-kohlers-crossing.webp`,
   },
   {
     name: 'Arden 231',
     id: 'arden-231',
     slug: 'arden-231',
-    type: 'Multi Family',
     location: 'San Marcos, TX',
+    units: 249,
     image: `${base}assets/images/portfolio/arden-231.jpg`,
   },
 ]
 
-const exitedDevelopment = [
+const exitedMultifamily = [
   {
     name: 'Gray Branch Luxury Apartments',
     id: 'gray-branch',
     slug: 'gray-branch',
-    type: 'Multi Family',
     location: 'McKinney, TX',
+    units: 300,
     image: `${base}assets/images/portfolio/gray-branch.webp`,
   },
   {
     name: 'McCarty Commons',
     id: 'mccarty-commons',
     slug: 'mccarty-commons',
-    type: 'Multi Family',
     location: 'San Marcos, TX',
+    units: 249,
     image: `${base}assets/images/portfolio/mccarty-commons.webp`,
   },
   {
     name: 'Park Place',
     id: 'park-place',
     slug: 'park-place',
-    type: 'Multi Family',
     location: 'Waxahachie, TX',
+    units: 213,
     image: `${base}assets/images/portfolio/park-place.webp`,
   },
   {
-    name: 'Reagan',
-    id: 'reagan',
-    slug: 'reagan',
-    type: 'Townhomes',
-    location: 'Texas',
-    image: `${base}assets/images/portfolio/placeholder.svg`,
-  },
-  {
-    name: 'Kalterra Court',
-    id: 'kalterra-court',
-    slug: 'kalterra-court',
-    type: 'Townhomes',
-    location: 'Texas',
-    image: `${base}assets/images/portfolio/placeholder.svg`,
-  },
-  {
-    name: 'Royalton 62307',
-    id: 'royalton-62307',
-    slug: 'royalton-62307',
-    type: 'Single Family Home',
-    location: 'Texas',
-    image: `${base}assets/images/portfolio/placeholder.svg`,
+    name: 'The Fitzgerald',
+    id: 'fitzgerald',
+    slug: 'the-fitzgerald',
+    location: 'Waxahachie, TX',
+    units: 184,
+    image: `${base}assets/images/portfolio/fitzgerald.webp`,
   },
 ]
 
@@ -93,7 +77,6 @@ const exitedRetail = [
     name: 'Hardwood & 360',
     id: 'hardwood-360',
     slug: 'harwood-360',
-    type: 'Retail',
     location: 'Euless, TX',
     image: `${base}assets/images/portfolio/harwood-360.jpg`,
   },
@@ -101,7 +84,6 @@ const exitedRetail = [
     name: 'Virginia Heights',
     id: 'virginia-heights',
     slug: 'virginia-heights',
-    type: 'Retail',
     location: 'McKinney, TX',
     image: `${base}assets/images/portfolio/virginia-heights.webp`,
   },
@@ -109,7 +91,6 @@ const exitedRetail = [
     name: 'Stonebrook',
     id: 'stonebrook',
     slug: 'stonebrook-court',
-    type: 'Retail',
     location: 'Frisco, TX',
     image: `${base}assets/images/portfolio/stonebrook-court.jpg`,
   },
@@ -117,36 +98,32 @@ const exitedRetail = [
     name: 'HO Texas 3',
     id: 'ho-texas-3',
     slug: 'ho-texas-3',
-    type: 'Retail',
     location: 'Texas',
     image: `${base}assets/images/portfolio/placeholder.svg`,
   },
 ]
 
-const exitedLand = [
+const exitedSingleFamily = [
   {
-    name: 'The Fitzgerald',
-    id: 'fitzgerald',
-    slug: 'the-fitzgerald',
-    type: 'Land',
-    location: 'Waxahachie, TX',
-    image: `${base}assets/images/portfolio/fitzgerald.webp`,
-  },
-  {
-    name: 'FM471',
-    id: 'fm471',
-    slug: 'fm471',
-    type: 'Land',
+    name: 'Reagan',
+    id: 'reagan',
+    slug: 'reagan',
     location: 'Texas',
     image: `${base}assets/images/portfolio/placeholder.svg`,
   },
   {
-    name: 'Culebra',
-    id: 'culebra',
-    slug: 'vala-at-culebra',
-    type: 'Land',
-    location: 'San Antonio, TX',
-    image: `${base}assets/images/portfolio/vala-culebra.jpg`,
+    name: 'Kalterra Court',
+    id: 'kalterra-court',
+    slug: 'kalterra-court',
+    location: 'Texas',
+    image: `${base}assets/images/portfolio/placeholder.svg`,
+  },
+  {
+    name: 'Royalton 62307',
+    id: 'royalton-62307',
+    slug: 'royalton-62307',
+    location: 'Texas',
+    image: `${base}assets/images/portfolio/placeholder.svg`,
   },
 ]
 
@@ -155,48 +132,48 @@ const futureProjectsWithImages = [
     name: 'VALA at Richie',
     id: 'vala-richie',
     slug: 'vala-at-ritchie',
-    type: 'Multi Family',
     location: 'Waco, TX',
+    units: 278,
     image: `${base}assets/images/portfolio/vala-ritchie.webp`,
   },
   {
     name: 'VALA at Solms Landing',
     id: 'vala-solms-landing',
     slug: 'vala-at-solms-landing',
-    type: 'Multi Family',
     location: 'New Braunfels, TX',
+    units: 378,
     image: `${base}assets/images/portfolio/vala-solms-landing.webp`,
   },
   {
     name: 'VALA at Hunter Road',
     id: 'vala-hunter-road',
     slug: 'vala-at-hunter-road',
-    type: 'Multi Family',
     location: 'San Marcos, TX',
+    units: 297,
     image: `${base}assets/images/portfolio/vala-hunter-road.jpg`,
   },
   {
     name: 'VALA Princeton',
     id: 'vala-princeton',
     slug: 'vala-princeton',
-    type: 'Multi Family',
     location: 'Princeton, TX',
+    units: 378,
     image: `${base}assets/images/portfolio/vala-princeton.webp`,
   },
   {
     name: 'The Madison',
     id: 'madison',
     slug: 'the-madison',
-    type: 'Multi Family',
     location: 'Cedar Hill, TX',
+    units: 182,
     image: `${base}assets/images/portfolio/madison.webp`,
   },
   {
     name: 'Burleson SFR',
     id: 'burleson-sfr',
     slug: 'burleson-sfr',
-    type: 'Multi Family',
     location: 'Burleson, TX',
+    units: 200,
     image: `${base}assets/images/portfolio/burleson-sfr.jpg`,
   },
 ]
@@ -221,7 +198,7 @@ const futureComingSoon = []
   <section class="bg-white pb-8">
     <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
       <nav class="flex flex-wrap gap-4 lg:gap-8 border-b border-gray-200 pb-6">
-        <a href="#active-projects" class="text-sm uppercase tracking-widest text-gold font-medium hover:text-gold-light">Active Projects</a>
+        <a href="#operating-assets" class="text-sm uppercase tracking-widest text-gold font-medium hover:text-gold-light">Operating Assets</a>
         <a href="#exited-projects" class="text-sm uppercase tracking-widest text-gray-500 font-medium hover:text-gray-900">Exited Projects</a>
         <a href="#future-projects" class="text-sm uppercase tracking-widest text-gray-500 font-medium hover:text-gray-900">Future Projects</a>
       </nav>
@@ -229,18 +206,18 @@ const futureComingSoon = []
   </section>
 
   <!-- ============================================
-       ACTIVE PROJECTS
+       OPERATING ASSETS
        ============================================ -->
-  <section id="active-projects" class="bg-white pb-20 lg:pb-28">
+  <section id="operating-assets" class="bg-white pb-20 lg:pb-28">
     <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
-      <h2 class="text-gray-900 mb-10">Active Projects</h2>
+      <h2 class="text-gray-900 mb-10">Operating Assets</h2>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {activeProjects.map((project) => (
           <a href={`${base}portfolio/${project.slug}/`} id={project.id} class="project-card group relative aspect-[4/3] overflow-hidden">
             <img src={project.image} alt={project.name} class="w-full h-full object-cover" />
             <div class="project-overlay absolute inset-0 bg-black/60 flex flex-col justify-end p-6">
-              <p class="text-xs uppercase tracking-widest text-gold mb-1">{project.type} &middot; {project.location}</p>
+              <p class="text-xs uppercase tracking-widest text-gold mb-1">{project.location}{project.units ? ` · ${project.units} Units` : ''}</p>
               <h4 class="text-white font-bold text-xl">{project.name}</h4>
             </div>
           </a>
@@ -256,14 +233,14 @@ const futureComingSoon = []
     <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
       <h2 class="text-gray-900 mb-12">Exited Projects</h2>
 
-      <!-- Development subsection -->
-      <h3 class="text-gray-900 text-xl font-semibold mb-8">Development</h3>
+      <!-- Multifamily subsection -->
+      <h3 class="text-gray-900 text-xl font-semibold mb-8">Multifamily</h3>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-        {exitedDevelopment.map((project) => (
+        {exitedMultifamily.map((project) => (
           <a href={`${base}portfolio/${project.slug}/`} id={project.id} class="project-card group relative aspect-[4/3] overflow-hidden">
             <img src={project.image} alt={project.name} class="w-full h-full object-cover" />
             <div class="project-overlay absolute inset-0 bg-black/60 flex flex-col justify-end p-6">
-              <p class="text-xs uppercase tracking-widest text-gold mb-1">{project.type} &middot; {project.location}</p>
+              <p class="text-xs uppercase tracking-widest text-gold mb-1">{project.location}{project.units ? ` · ${project.units} Units` : ''}</p>
               <h4 class="text-white font-bold text-xl">{project.name}</h4>
             </div>
           </a>
@@ -277,21 +254,21 @@ const futureComingSoon = []
           <a href={`${base}portfolio/${project.slug}/`} id={project.id} class="project-card group relative aspect-[4/3] overflow-hidden">
             <img src={project.image} alt={project.name} class="w-full h-full object-cover" />
             <div class="project-overlay absolute inset-0 bg-black/60 flex flex-col justify-end p-6">
-              <p class="text-xs uppercase tracking-widest text-gold mb-1">{project.type} &middot; {project.location}</p>
+              <p class="text-xs uppercase tracking-widest text-gold mb-1">{project.location}</p>
               <h4 class="text-white font-bold text-xl">{project.name}</h4>
             </div>
           </a>
         ))}
       </div>
 
-      <!-- Land subsection -->
-      <h3 class="text-gray-900 text-xl font-semibold mb-8">Land</h3>
+      <!-- Single-Family subsection -->
+      <h3 class="text-gray-900 text-xl font-semibold mb-8">Single-Family</h3>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {exitedLand.map((project) => (
+        {exitedSingleFamily.map((project) => (
           <a href={`${base}portfolio/${project.slug}/`} id={project.id} class="project-card group relative aspect-[4/3] overflow-hidden">
             <img src={project.image} alt={project.name} class="w-full h-full object-cover" />
             <div class="project-overlay absolute inset-0 bg-black/60 flex flex-col justify-end p-6">
-              <p class="text-xs uppercase tracking-widest text-gold mb-1">{project.type} &middot; {project.location}</p>
+              <p class="text-xs uppercase tracking-widest text-gold mb-1">{project.location}</p>
               <h4 class="text-white font-bold text-xl">{project.name}</h4>
             </div>
           </a>
@@ -312,7 +289,7 @@ const futureComingSoon = []
           <a href={`${base}portfolio/${project.slug}/`} id={project.id} class="project-card group relative aspect-[4/3] overflow-hidden">
             <img src={project.image} alt={project.name} class="w-full h-full object-cover" />
             <div class="project-overlay absolute inset-0 bg-black/60 flex flex-col justify-end p-6">
-              <p class="text-xs uppercase tracking-widest text-gold mb-1">{project.type} &middot; {project.location}</p>
+              <p class="text-xs uppercase tracking-widest text-gold mb-1">{project.location}{project.units ? ` · ${project.units} Units` : ''}</p>
               <h4 class="text-white font-bold text-xl">{project.name}</h4>
             </div>
           </a>

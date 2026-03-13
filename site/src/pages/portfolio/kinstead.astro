@@ -7,7 +7,7 @@ const project = {
   name: 'Kinstead',
   type: 'Acquisition',
   location: 'McKinney, TX',
-  status: 'Built 2019',
+  status: 'Stabilized',
   units: 376,
   acreage: null,
   sqft: null,
@@ -50,10 +50,6 @@ const project = {
           <h3 class="text-gray-900 text-lg font-semibold mb-6 pb-4 border-b border-gray-200">Project Details</h3>
           <dl class="space-y-4">
             <div>
-              <dt class="text-gray-500 text-sm uppercase tracking-wider">Type</dt>
-              <dd class="text-gray-900 mt-1">{project.type}</dd>
-            </div>
-            <div>
               <dt class="text-gray-500 text-sm uppercase tracking-wider">Location</dt>
               <dd class="text-gray-900 mt-1">{project.location}</dd>
             </div>
@@ -67,12 +63,6 @@ const project = {
               <div>
                 <dt class="text-gray-500 text-sm uppercase tracking-wider">Square Footage</dt>
                 <dd class="text-gray-900 mt-1">{project.sqft}</dd>
-              </div>
-            )}
-            {project.acreage && (
-              <div>
-                <dt class="text-gray-500 text-sm uppercase tracking-wider">Acreage</dt>
-                <dd class="text-gray-900 mt-1">{project.acreage}</dd>
               </div>
             )}
             <div>
