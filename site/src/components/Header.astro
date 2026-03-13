@@ -7,6 +7,7 @@ const currentPath = Astro.url.pathname
 const base = import.meta.env.BASE_URL
 
 const navLinks = [
+  { label: 'Home', href: base },
   { label: 'About', href: `${base}about/` },
   { label: 'Team', href: `${base}team/` },
   { label: 'Portfolio', href: `${base}portfolio/` },
@@ -14,7 +15,7 @@ const navLinks = [
   { label: 'Contact', href: `${base}contact/` },
 ]
 
-const isActive = (href: string) => currentPath === href || currentPath.startsWith(href.replace(/\/$/, '') + '/')
+const isActive = (href: string) => href === base ? currentPath === href : currentPath === href || currentPath.startsWith(href.replace(/\/$/, '') + '/')
 ---
 
 <header
