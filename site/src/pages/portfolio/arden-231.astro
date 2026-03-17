@@ -12,7 +12,6 @@ const project = {
   acreage: '10.8 acres',
   sqft: null,
   description: 'Arden 231 is a 249-unit surface parked apartment in San Marcos, TX. Arden is the second phase of a two-phase multifamily development completed by Kalterra. The first phase, McCarty Commons, was completed and sold by Kalterra in 2021.',
-  amenities: ['Fitness Center', 'Kitchen', 'Leasing Office', 'Pet Friendly', 'Pool', 'Great Room', 'Pickleball Courts', 'Business Conference Room', 'Private Desks', 'Dog Spa', 'Dog Park'],
   website: 'arden231.com',
   heroImage: `${base}assets/images/portfolio/Arden 231.jpg`,
   gallery: [
@@ -88,16 +87,6 @@ const project = {
         <!-- Description -->
         <div class="lg:col-span-2">
           <p class="text-gray-600 text-lg leading-relaxed">{project.description}</p>
-          {project.amenities.length > 0 && (
-            <div class="mt-10">
-              <h4 class="text-gray-900 text-lg font-semibold mb-4">Amenities</h4>
-              <div class="flex flex-wrap gap-3">
-                {project.amenities.map((amenity) => (
-                  <span class="px-4 py-2 border border-gray-200 text-gray-600 text-sm">{amenity}</span>
-                ))}
-              </div>
-            </div>
-          )}
         </div>
       </div>
     </div>

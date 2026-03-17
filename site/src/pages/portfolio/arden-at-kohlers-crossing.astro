@@ -12,7 +12,6 @@ const project = {
   acreage: '65 acres',
   sqft: null,
   description: 'Arden at Kohlers Crossing is a 263-unit wrap-inspired surface parked apartment in Kyle, TX. Kohlers Crossing is a mixed-use project developed by Kalterra including Arden, sit-down and quick-service restaurant end-users.',
-  amenities: ['Courtyard', 'Fitness Center', 'Kitchen', 'Leasing Office', 'Pet Friendly', 'Pool'],
   website: 'www.ardenatkohlerscrossing.com',
   heroImage: `${base}assets/images/portfolio/Arden at Kohler's Crossing.JPG`,
   gallery: [
@@ -88,16 +87,6 @@ const project = {
         <!-- Description -->
         <div class="lg:col-span-2">
           <p class="text-gray-600 text-lg leading-relaxed">{project.description}</p>
-          {project.amenities.length > 0 && (
-            <div class="mt-10">
-              <h4 class="text-gray-900 text-lg font-semibold mb-4">Amenities</h4>
-              <div class="flex flex-wrap gap-3">
-                {project.amenities.map((amenity) => (
-                  <span class="px-4 py-2 border border-gray-200 text-gray-600 text-sm">{amenity}</span>
-                ))}
-              </div>
-            </div>
-          )}
         </div>
       </div>
     </div>

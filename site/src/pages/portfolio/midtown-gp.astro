@@ -12,7 +12,6 @@ const project = {
   acreage: '54.7 acres',
   sqft: null,
   description: "Arden at Midtown GP is the first multifamily development in a 56-acre mixed use project developed by Kalterra, Midtown GP. Midtown GP is a master-planned community including two phases a multifamily, 142 townhomes, and over 50,000 square feet of future frontage retail.",
-  amenities: ['Fitness Center', 'Kitchen', 'Lounge', 'Pet Friendly', 'Pool', 'Golf Simulator', 'Game Room', 'Business Conference Room'],
   website: 'www.ardenatmidtowngp.com',
   heroImage: `${base}assets/images/portfolio/Arden at Midtown GP.jpg`,
   gallery: [
@@ -88,16 +87,6 @@ const project = {
         <!-- Description -->
         <div class="lg:col-span-2">
           <p class="text-gray-600 text-lg leading-relaxed">{project.description}</p>
-          {project.amenities.length > 0 && (
-            <div class="mt-10">
-              <h4 class="text-gray-900 text-lg font-semibold mb-4">Amenities</h4>
-              <div class="flex flex-wrap gap-3">
-                {project.amenities.map((amenity) => (
-                  <span class="px-4 py-2 border border-gray-200 text-gray-600 text-sm">{amenity}</span>
-                ))}
-              </div>
-            </div>
-          )}
         </div>
       </div>
     </div>
