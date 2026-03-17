@@ -1,32 +1,19 @@
 ---
-/**
- * COMMENTED OUT — The Hamilton
- * This page has been temporarily removed from the active portfolio.
- * Do not delete — can be restored later.
- */
----
-
-<!--
-COMMENTED OUT — The Hamilton detail page
-This property is not in the current portfolio listing.
-
-Original page content preserved below:
-
 import Layout from '../../layouts/Layout.astro'
 import Gallery from '../../components/Gallery.astro'
 const base = import.meta.env.BASE_URL
 
 const project = {
   name: 'The Hamilton',
-  type: 'Active Adult Community',
+  type: 'Multi Family',
   location: 'Waxahachie, TX',
-  status: 'Completed September 2023',
+  status: 'Exited',
   units: 175,
   acreage: null,
   sqft: null,
-  description: 'The Hamilton is a 175-unit active adult development that broke ground in August 2021. The project is in a master planned bedroom community with excellent schools and recreational facilities.',
+  description: "The Hamilton is Kalterra's third multifamily development in Waxahachie and the first luxury active adult community in the market.",
   website: 'www.hamiltonwaxahachie.com',
-  heroImage: `${base}assets/images/portfolio/the-hamilton/01.webp`,
+  heroImage: `${base}assets/images/portfolio/The Hamilton.jpg`,
   gallery: [
     { src: `${base}assets/images/portfolio/the-hamilton/01.webp`, alt: 'Front Entrance' },
     { src: `${base}assets/images/portfolio/the-hamilton/02.webp`, alt: 'Dining Room' },
@@ -36,9 +23,80 @@ const project = {
     { src: `${base}assets/images/portfolio/the-hamilton/06.webp`, alt: 'Lobby' },
   ],
 }
+---
 
-<Layout title={project.name} description={`${project.name} - ${project.type} in ${project.location}`} headerAlt={true}>
-  HERO section, HERO IMAGE section, DETAILS section, GALLERY, and CTA
-  (Full page template identical to other property pages)
+<Layout title={project.name} description={`${project.name} — ${project.type} in ${project.location}`} headerAlt={true}>
+  <!-- HERO -->
+  <section class="pt-32 pb-6 lg:pt-40 lg:pb-8 bg-white">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+      <a href={`${base}portfolio/`} class="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-gold transition-colors mb-8">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        Back to Portfolio
+      </a>
+      <p class="text-sm uppercase tracking-widest text-gold mb-4">{project.type} &middot; {project.location}</p>
+      <h1 class="text-gray-900">{project.name}</h1>
+    </div>
+  </section>
+
+  <!-- HERO IMAGE -->
+  <section class="bg-white pb-12 lg:pb-16">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+      <div class="aspect-[21/9] overflow-hidden">
+        <img src={project.heroImage} alt={project.name} class="w-full h-full object-cover" />
+      </div>
+    </div>
+  </section>
+
+  <!-- DETAILS -->
+  <section class="bg-white pb-16 lg:pb-24">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
+        <!-- Specs -->
+        <div class="lg:col-span-1">
+          <h3 class="text-gray-900 text-lg font-semibold mb-6 pb-4 border-b border-gray-200">Project Details</h3>
+          <dl class="space-y-4">
+            <div>
+              <dt class="text-gray-500 text-sm uppercase tracking-wider">Location</dt>
+              <dd class="text-gray-900 mt-1">{project.location}</dd>
+            </div>
+            <div>
+              <dt class="text-gray-500 text-sm uppercase tracking-wider">Units</dt>
+              <dd class="text-gray-900 mt-1">{project.units}</dd>
+            </div>
+            <div>
+              <dt class="text-gray-500 text-sm uppercase tracking-wider">Status</dt>
+              <dd class="text-[#c9a85c] mt-1">Exited</dd>
+            </div>
+            {project.website && (
+              <div>
+                <dt class="text-gray-500 text-sm uppercase tracking-wider">Website</dt>
+                <dd class="mt-1"><a href={`https://${project.website}`} target="_blank" rel="noopener" class="text-gold hover:text-gold-light transition-colors">{project.website}</a></dd>
+              </div>
+            )}
+          </dl>
+        </div>
+
+        <!-- Description -->
+        <div class="lg:col-span-2">
+          <p class="text-gray-600 text-lg leading-relaxed">{project.description}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  {project.gallery.length > 0 && <Gallery images={project.gallery} />}
+
+  <!-- CTA -->
+  <section class="bg-gray-50 py-16 lg:py-24 border-t border-gray-200">
+    <div class="max-w-3xl mx-auto px-6 lg:px-12 text-center">
+      <h2 class="text-gray-900 mb-6">Interested in this project?</h2>
+      <a
+        href={`${base}contact/`}
+        class="inline-block px-10 py-4 bg-gold text-black font-semibold text-sm uppercase tracking-widest hover:bg-gold-light transition-colors"
+      >
+        Contact Us
+      </a>
+    </div>
+  </section>
 </Layout>
--->
