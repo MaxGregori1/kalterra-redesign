@@ -43,7 +43,7 @@ export function getTeam(base: string): TeamMember[] {
     {
       name: 'Nic Balsamo',
       slug: 'nic-balsamo',
-      title: 'Partner & President',
+      title: 'Partner',
       bio: 'Nic joined Kalterra in 2018 and has over 6 years of commercial real estate experience, specializing in acquisitions and development. His responsibilities include acquisitions, business development, and project management.',
       education: ['Florida State University, BS in Real Estate & Finance'],
       email: 'nic@kalterra.com',
